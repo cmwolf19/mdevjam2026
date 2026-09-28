@@ -1,0 +1,36 @@
+[gd_resource type="Theme" format=3 uid="uid://cftg4p6dwgdbg"]
+
+[ext_resource type="FontFile" uid="uid://drgv4c6g1hvte" path="res://UI/ds_digital/DS-DIGIT.TTF" id="1_74a5u"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_74a5u"]
+bg_color = Color(0.82, 1, 0.82, 1)
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color(1, 1, 0.85, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+shadow_size = 16
+shadow_offset = Vector2(8, 8)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dg77c"]
+bg_color = Color(0, 0.10980392, 0, 1)
+
+[resource]
+HBoxContainer/constants/separation = 32
+Label/colors/font_color = Color(0, 0.11, 0, 1)
+Label/colors/font_shadow_color = Color(0, 0.11, 0, 0.27450982)
+Label/constants/shadow_offset_x = 3
+Label/constants/shadow_offset_y = 1
+Label/font_sizes/font_size = 48
+Label/fonts/font = ExtResource("1_74a5u")
+MarginContainer/constants/margin_bottom = 0
+MarginContainer/constants/margin_left = 10
+MarginContainer/constants/margin_right = 10
+MarginContainer/constants/margin_top = 0
+PanelContainer/styles/panel = SubResource("StyleBoxFlat_74a5u")
+ProgressBar/styles/fill = SubResource("StyleBoxFlat_dg77c")
+VBoxContainer/constants/separation = -12

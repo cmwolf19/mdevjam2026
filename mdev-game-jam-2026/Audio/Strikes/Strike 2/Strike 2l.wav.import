@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bgy7y2ixw8ntd"
+path="res://.godot/imported/Strike 2l.wav-0dfc83d3a64aa1c84080f0b23f367493.sample"
+
+[deps]
+
+source_file="res://Audio/Strikes/Strike 2/Strike 2l.wav"
+dest_files=["res://.godot/imported/Strike 2l.wav-0dfc83d3a64aa1c84080f0b23f367493.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

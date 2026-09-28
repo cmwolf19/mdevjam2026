@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://occe3ouj08f"
+path="res://.godot/imported/Jimmy Neutron 3 2 1.mp3-d942a1db1f58ddcdac50ef46b8dc263e.mp3str"
+
+[deps]
+
+source_file="res://Audio/Sacred Audio/Jimmy Neutron 3 2 1.mp3"
+dest_files=["res://.godot/imported/Jimmy Neutron 3 2 1.mp3-d942a1db1f58ddcdac50ef46b8dc263e.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

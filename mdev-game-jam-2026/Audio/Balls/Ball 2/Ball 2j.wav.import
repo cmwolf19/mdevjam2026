@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cnn2o4vrte4sa"
+path="res://.godot/imported/Ball 2j.wav-8a9a272bc65a760a5c76b941be93c403.sample"
+
+[deps]
+
+source_file="res://Audio/Balls/Ball 2/Ball 2j.wav"
+dest_files=["res://.godot/imported/Ball 2j.wav-8a9a272bc65a760a5c76b941be93c403.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

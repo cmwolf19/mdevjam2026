@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://b7k1hc648l7k3"]
+
+[ext_resource type="Script" uid="uid://ynxswwxouj" path="res://Elements/Ball/ball.gd" id="1_tawkg"]
+[ext_resource type="Texture2D" uid="uid://rmkc6fykjjvt" path="res://Elements/Ball/baseball.png" id="2_xgt2q"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_x1a4p"]
+radius = 30.149628
+
+[node name="Curve Ball Right" type="Node2D" unique_id=536422818]
+script = ExtResource("1_tawkg")
+spin_strength = 4.0
+final_position = Vector2(100, 100)
+ball_target = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1015188844]
+scale = Vector2(0.20166665, 0.20166665)
+texture = ExtResource("2_xgt2q")
+centered = false
+offset = Vector2(-150, -150)
+
+[node name="Area2D" type="Area2D" parent="." unique_id=719109040]
+collision_layer = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=318974472]
+shape = SubResource("CircleShape2D_x1a4p")
+
+[node name="Shadow" type="Sprite2D" parent="." unique_id=1354009082]
+modulate = Color(0, 0, 0, 0.5176471)
+position = Vector2(0, 144)
+scale = Vector2(0.20166665, 0.04852096)
+texture = ExtResource("2_xgt2q")
+centered = false
+offset = Vector2(-150, -150)

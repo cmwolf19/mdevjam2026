@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://b11v84dg448ob"
+path="res://.godot/imported/Ball 4b.wav-fb337a8b62674746059dc51cf81716a0.sample"
+
+[deps]
+
+source_file="res://Audio/Balls/Ball 4/Ball 4b.wav"
+dest_files=["res://.godot/imported/Ball 4b.wav-fb337a8b62674746059dc51cf81716a0.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

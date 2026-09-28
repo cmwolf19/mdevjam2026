@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bqd6d58txlbab"
+path="res://.godot/imported/Strike 3p.wav-c6007770a6f8550c0e2537666fd1c303.sample"
+
+[deps]
+
+source_file="res://Audio/Strikes/Strike 3/Strike 3p.wav"
+dest_files=["res://.godot/imported/Strike 3p.wav-c6007770a6f8550c0e2537666fd1c303.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

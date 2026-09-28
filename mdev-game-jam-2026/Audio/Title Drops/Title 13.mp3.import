@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://ci7vr56esw0pq"
+path="res://.godot/imported/Title 13.mp3-92fa1e02a80a2e1c1d733307ae60c852.mp3str"
+
+[deps]
+
+source_file="res://Audio/Title Drops/Title 13.mp3"
+dest_files=["res://.godot/imported/Title 13.mp3-92fa1e02a80a2e1c1d733307ae60c852.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

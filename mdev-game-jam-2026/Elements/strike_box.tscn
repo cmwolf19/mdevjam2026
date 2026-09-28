@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://c0x8fn028ngl6"]
+
+[ext_resource type="Script" uid="uid://dttkwdfb15wpu" path="res://Elements/strike_box.gd" id="1_3g33g"]
+
+[node name="Strike Box" type="Polygon2D" unique_id=862971078]
+script = ExtResource("1_3g33g")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1171788350]
+monitoring = false
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1858978529]

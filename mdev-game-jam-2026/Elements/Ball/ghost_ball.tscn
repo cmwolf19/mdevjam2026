@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://m61r28p2jo3h"]
+
+[ext_resource type="Texture2D" uid="uid://rmkc6fykjjvt" path="res://Elements/Ball/baseball.png" id="1_ph6qs"]
+[ext_resource type="Script" uid="uid://crf4plos4u4ra" path="res://Elements/Ball/ghost_ball.gd" id="2_ahjp1"]
+
+[node name="Ghost Ball" type="Node2D" unique_id=159980283]
+z_index = -1
+scale = Vector2(0.2, 0.2)
+script = ExtResource("2_ahjp1")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2038854906]
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_ph6qs")
