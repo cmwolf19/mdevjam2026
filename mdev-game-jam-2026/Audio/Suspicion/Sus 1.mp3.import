@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://c3bt1lbefw1wq"
+path="res://.godot/imported/Sus 1.mp3-74c87f773d233d9c8350385df9e14ad3.mp3str"
+
+[deps]
+
+source_file="res://Audio/Suspicion/Sus 1.mp3"
+dest_files=["res://.godot/imported/Sus 1.mp3-74c87f773d233d9c8350385df9e14ad3.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

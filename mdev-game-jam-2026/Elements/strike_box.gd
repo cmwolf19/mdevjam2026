@@ -56,7 +56,7 @@ func Redraw_Box():
 
 func on_caught_ball():
 	caught_ball = true
-	modulate = Color.GREEN
+	modulate = Color(0, 1, 0, 0.5)
 	await get_tree().create_timer(1).timeout
 	var tween = create_tween()
 	tween.tween_property(self, "modulate", Color(0, 1, 0, 0), 1)

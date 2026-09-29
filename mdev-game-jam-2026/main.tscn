@@ -4,8 +4,10 @@
 [ext_resource type="Script" uid="uid://qyvjeus1jf7j" path="res://main.gd" id="1_lquwl"]
 [ext_resource type="Script" uid="uid://dtydq0td6xo3y" path="res://ball_thrower.gd" id="2_0xm2m"]
 [ext_resource type="Script" uid="uid://blgssm0btl7si" path="res://game_manager.gd" id="2_7mycd"]
+[ext_resource type="Texture2D" uid="uid://ba8qjmav0073" path="res://Elements/Batter/Batter.png" id="3_bmvma"]
 [ext_resource type="Texture2D" uid="uid://djknpk4dliqol" path="res://Field.png" id="3_h2yge"]
 [ext_resource type="Script" uid="uid://c63fowfci1hx0" path="res://Elements/Pitcher/pitcher.gd" id="4_1iygd"]
+[ext_resource type="Script" uid="uid://dna2qgf2vcjqq" path="res://Elements/Batter/batter.gd" id="4_shlp4"]
 [ext_resource type="PackedScene" uid="uid://djup7fmexl1dc" path="res://Elements/Ball/sinker.tscn" id="5_5vw27"]
 [ext_resource type="PackedScene" uid="uid://c4oshlsmc1n6o" path="res://Elements/Ball/curve_ball_left.tscn" id="6_kek77"]
 [ext_resource type="PackedScene" uid="uid://b7k1hc648l7k3" path="res://Elements/Ball/curve_ball_right.tscn" id="7_kek77"]
@@ -14,8 +16,11 @@
 [ext_resource type="FontFile" uid="uid://djbmg08t5ijin" path="res://UI/magazine_letter/MagazineLetterByBrntlbrnl-Regular.ttf" id="10_dg77c"]
 [ext_resource type="Theme" uid="uid://cftg4p6dwgdbg" path="res://UI/scoreboard.tres" id="11_dg77c"]
 [ext_resource type="AudioStream" uid="uid://17vsjfepq3ei" path="res://Audio/Strikes/Strike 1/Strike 1a.wav" id="13_off2o"]
+[ext_resource type="Texture2D" uid="uid://c5f6ptujlrknj" path="res://UI/Paper Instructions.png" id="14_3exxq"]
 [ext_resource type="AudioStream" uid="uid://jpkh16hq5rke" path="res://Audio/Strikes/Strike 1/Strike 1b.wav" id="14_tttfs"]
 [ext_resource type="AudioStream" uid="uid://ntd0sk0m2enn" path="res://Audio/Strikes/Strike 1/Strike 1k.wav" id="15_1iygd"]
+[ext_resource type="Script" uid="uid://b3mw7kmkrky7b" path="res://UI/instructions.gd" id="15_5aa3q"]
+[ext_resource type="Script" uid="uid://dll6fxuettlsh" path="res://tv.gd" id="15_7mmqq"]
 [ext_resource type="AudioStream" uid="uid://cbitqw5k8uevd" path="res://Audio/Strikes/Strike 1/Strike 1l.wav" id="16_g5xqc"]
 [ext_resource type="AudioStream" uid="uid://6ykrh203rpfi" path="res://Audio/Strikes/Strike 1/Strike 1m.wav" id="17_s4o1y"]
 [ext_resource type="AudioStream" uid="uid://dkeprwg3ir7h0" path="res://Audio/Strikes/Strike 1/Strike 1n.wav" id="18_7mmqq"]
@@ -127,6 +132,41 @@
 [ext_resource type="AudioStream" uid="uid://beiesxr66oujb" path="res://Audio/Balls/Ball 4/Ball 4i.wav" id="123_e31mi"]
 [ext_resource type="AudioStream" uid="uid://cmeoey8kjhhl7" path="res://Audio/Balls/Ball 4/Ball 4j.wav" id="124_mq14a"]
 [ext_resource type="Texture2D" uid="uid://dnyury2bcubw" path="res://Elements/Pitcher/Pitcher Hold.png" id="125_tttfs"]
+[ext_resource type="Shader" uid="uid://cgikpdhxfcqey" path="res://main.gdshader" id="128_s4o1y"]
+[ext_resource type="AudioStream" uid="uid://c3bt1lbefw1wq" path="res://Audio/Suspicion/Sus 1.mp3" id="134_qe8ju"]
+[ext_resource type="AudioStream" uid="uid://bql6wbvbgu1cy" path="res://Audio/Suspicion/Sus 2.mp3" id="135_bnk2o"]
+[ext_resource type="AudioStream" uid="uid://cyvglhbvykm3l" path="res://Audio/Suspicion/Sus 3.mp3" id="136_oosfy"]
+[ext_resource type="AudioStream" uid="uid://blwbofkh68s0n" path="res://Audio/Suspicion/Sus 4.mp3" id="137_nf4f2"]
+[ext_resource type="AudioStream" uid="uid://d4cg3u5ghjarq" path="res://Audio/Crowd Noise/Crowd 2.wav" id="138_t5kpo"]
+[ext_resource type="AudioStream" uid="uid://cfp4j76e1mpbu" path="res://Audio/Crowd Noise/Crowd 3.wav" id="139_pw0td"]
+[ext_resource type="AudioStream" uid="uid://csaa60oqrpedw" path="res://Audio/Crowd Noise/Crowd 4.wav" id="140_37eu1"]
+[ext_resource type="AudioStream" uid="uid://cnbbopaqdla74" path="res://Audio/Crowd Noise/Crowd 5.wav" id="141_0wkqm"]
+[ext_resource type="AudioStream" uid="uid://dj232ys25xkra" path="res://Audio/Crowd Noise/Crowd 6.wav" id="142_ve5sr"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_x1a4p"]
+shader = ExtResource("128_s4o1y")
+shader_parameter/brightness = 1.41600006726
+shader_parameter/contrast = 1.08
+shader_parameter/saturation = 1.1
+shader_parameter/gamma = 1.05
+shader_parameter/curvature = 0.0590000028025
+shader_parameter/corner_soften = 0.0
+shader_parameter/vignette = 0.1130000053675
+shader_parameter/scanline_strength = 0.450000021375
+shader_parameter/scanline_density = 1.15
+shader_parameter/interlace_strength = 0.2
+shader_parameter/mask_strength = 1.0
+shader_parameter/mask_scale = 1.0
+shader_parameter/chroma_offset_px = 1.6
+shader_parameter/luma_smear_px = 2.2
+shader_parameter/jitter_px = 0.646000030685
+shader_parameter/wobble_px = 0.0
+shader_parameter/tape_noise = 0.21200001007
+shader_parameter/tape_lines = 0.0
+shader_parameter/roll_speed = 0.1
+shader_parameter/roll_strength = 0.15
+shader_parameter/glow_strength = 2.0
+shader_parameter/glow_threshold = 0.750000035625
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_dg77c"]
 streams_count = 23
@@ -261,6 +301,21 @@ stream_10/stream = ExtResource("114_2gd4m")
 stream_11/stream = ExtResource("115_61bol")
 stream_12/stream = ExtResource("116_lix4w")
 
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_x1a4p"]
+streams_count = 4
+stream_0/stream = ExtResource("134_qe8ju")
+stream_1/stream = ExtResource("135_bnk2o")
+stream_2/stream = ExtResource("136_oosfy")
+stream_3/stream = ExtResource("137_nf4f2")
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_qflyo"]
+streams_count = 5
+stream_0/stream = ExtResource("138_t5kpo")
+stream_1/stream = ExtResource("139_pw0td")
+stream_2/stream = ExtResource("140_37eu1")
+stream_3/stream = ExtResource("141_0wkqm")
+stream_4/stream = ExtResource("142_ve5sr")
+
 [node name="Main" type="Node2D" unique_id=155545350]
 script = ExtResource("1_lquwl")
 
@@ -268,12 +323,18 @@ script = ExtResource("1_lquwl")
 script = ExtResource("2_7mycd")
 
 [node name="Timer" type="Timer" parent="Game Manager" unique_id=1272449124]
-wait_time = 4.0
+wait_time = 2.0
 one_shot = true
 autostart = true
 
+[node name="Batter" type="Sprite2D" parent="." unique_id=587645794]
+position = Vector2(728, 421)
+scale = Vector2(0.49415588, 0.49415585)
+texture = ExtResource("3_bmvma")
+script = ExtResource("4_shlp4")
+
 [node name="Pitcher" type="Sprite2D" parent="." unique_id=1531458662]
-position = Vector2(579, 455)
+position = Vector2(579, 449)
 scale = Vector2(0.104532205, 0.104532205)
 texture = ExtResource("125_tttfs")
 offset = Vector2(0, -529)
@@ -441,6 +502,26 @@ layout_mode = 2
 text = "IT'S A STRIKE!"
 visible_characters_behavior = 1
 
+[node name="Instructions" type="TextureRect" parent="CanvasLayer" unique_id=1751661009]
+offset_left = 3.0
+offset_top = 595.0
+offset_right = 285.0
+offset_bottom = 858.0
+mouse_filter = 0
+texture = ExtResource("14_3exxq")
+script = ExtResource("15_5aa3q")
+
+[node name="TV" type="ColorRect" parent="CanvasLayer" unique_id=1941630303]
+visible = false
+material = SubResource("ShaderMaterial_x1a4p")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("15_7mmqq")
+
 [node name="BG" type="Sprite2D" parent="." unique_id=1874325053]
 z_index = -99
 position = Vector2(577, 365)
@@ -490,4 +571,16 @@ bus = &"Announcer"
 script = ExtResource("38_g5xqc")
 key = "Ball4"
 
+[node name="Suspision" type="AudioStreamPlayer" parent="." unique_id=1517700987]
+stream = SubResource("AudioStreamRandomizer_x1a4p")
+script = ExtResource("38_g5xqc")
+key = "Sus"
+
+[node name="Crowd" type="AudioStreamPlayer" parent="." unique_id=555811101]
+stream = SubResource("AudioStreamRandomizer_qflyo")
+volume_db = -15.0
+autoplay = true
+
 [connection signal="timeout" from="Game Manager/Timer" to="Game Manager" method="_on_timer_timeout"]
+[connection signal="mouse_entered" from="CanvasLayer/Instructions" to="CanvasLayer/Instructions" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer/Instructions" to="CanvasLayer/Instructions" method="_on_mouse_exited"]

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cunx18qitkes5"
+path="res://.godot/imported/Deny 4.mp3-350b2d8e09d4ff1b5e14a6fb53fce6ce.mp3str"
+
+[deps]
+
+source_file="res://Audio/Deny/Deny 4.mp3"
+dest_files=["res://.godot/imported/Deny 4.mp3-350b2d8e09d4ff1b5e14a6fb53fce6ce.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

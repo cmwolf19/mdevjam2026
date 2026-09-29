@@ -86,6 +86,7 @@ func Cue_Text():
 	text_display.show()
 
 func Add_Suspicion():
+	Global.CallStrike.emit()
 	live_ball = false
 	caught = true
 	var old_sus : int = suspicion
@@ -105,12 +106,12 @@ func Add_Suspicion():
 	
 	if suspicion-old_sus > 1:
 		Tween_Line(result_label, Get_Line(sus_strike_lines))
+		Global.CueSFX.emit("Sus")
 	else:
 		Tween_Line(result_label, Get_Line(good_strike_lines))
 	strikes += 1
 	Global.CueSFX.emit("Strike"+str(strikes))
 	Update_Scoreboard()
-	await get_tree().create_timer(2).timeout
 	await Show_Suspicion()
 	timer.start()
 
@@ -123,6 +124,7 @@ func Call_Ball():
 	Tween_Line(result_label, Get_Line(ball_lines))
 	balls += 1
 	Global.CueSFX.emit("Ball"+str(balls))
+	Global.CallBall.emit()
 	Update_Scoreboard()
 	live_ball = false
 	live_boxes.clear()
@@ -164,7 +166,7 @@ func Show_Suspicion():
 	await get_tree().create_timer(1).timeout
 	var tween = create_tween()
 	tween.tween_property(suspicion_meter, "value", suspicion, 1)
-	await get_tree().create_timer(3).timeout
+	await get_tree().create_timer(2).timeout
 
 func _on_timer_timeout() -> void:
 	Cue_Text()

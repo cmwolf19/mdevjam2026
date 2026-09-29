@@ -3,6 +3,8 @@
 [ext_resource type="Script" uid="uid://dttkwdfb15wpu" path="res://Elements/strike_box.gd" id="1_3g33g"]
 
 [node name="Strike Box" type="Polygon2D" unique_id=862971078]
+modulate = Color(1, 1, 1, 0.7529412)
+color = Color(0, 0.6500001, 1, 1)
 script = ExtResource("1_3g33g")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1171788350]
