@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://inn6u0eolu4v"
+path="res://.godot/imported/Blip 5.mp3-e12820f9b1983a8786db13e574f1edfb.mp3str"
+
+[deps]
+
+source_file="res://Audio/Blips/Blip 5.mp3"
+dest_files=["res://.godot/imported/Blip 5.mp3-e12820f9b1983a8786db13e574f1edfb.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

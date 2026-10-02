@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://lv61bf38wkj5"
+path="res://.godot/imported/Blip 1.mp3-dbed930ae4b45f597b2c8d3f2ebd9225.mp3str"
+
+[deps]
+
+source_file="res://Audio/Blips/Blip 1.mp3"
+dest_files=["res://.godot/imported/Blip 1.mp3-dbed930ae4b45f597b2c8d3f2ebd9225.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

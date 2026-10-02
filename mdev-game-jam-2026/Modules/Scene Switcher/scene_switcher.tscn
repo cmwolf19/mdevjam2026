@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://b7lbk6ckdmdpb"]
+
+[ext_resource type="Script" uid="uid://d2025qq27u5ak" path="res://Modules/Scene Switcher/scene_switcher.gd" id="1_tar1s"]
+[ext_resource type="Material" uid="uid://buftxll2gm7xq" path="res://Modules/Scene Switcher/transition_material.tres" id="2_rv75j"]
+
+[node name="Scene Switcher" type="Node" unique_id=258836676]
+script = ExtResource("1_tar1s")
+transition_duration = 2.0
+progress_end = 2.0
+
+[node name="Transition Layer" type="CanvasLayer" parent="." unique_id=1020153056]
+layer = 100
+
+[node name="Transition Target" type="ColorRect" parent="Transition Layer" unique_id=1598665020]
+material = ExtResource("2_rv75j")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)

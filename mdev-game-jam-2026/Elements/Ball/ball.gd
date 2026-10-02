@@ -1,4 +1,8 @@
 extends Node2D
+class_name Pitch
+
+static var current_pitch : Pitch
+
 @export var fly_time : float = 2
 @export var spin_strength : float = 2
 @export var final_position : Vector2 = Vector2(0, 100)
@@ -8,8 +12,9 @@ extends Node2D
 @onready var sprite_2d: Sprite2D = $Sprite2D
 const GHOST_BALL = preload("uid://m61r28p2jo3h")
 var stopped : bool
-
+var hit : bool
 func _ready() -> void:
+	current_pitch = self
 	Spawn_Ghosts()
 	Global.current_target = ball_target
 	area_2d.area_entered.connect(Catch_Ball)
@@ -25,6 +30,8 @@ func _ready() -> void:
 	await spin_tween.finished
 	Global.BallStop.emit()
 	stopped = true
+	await get_tree().create_timer(0.5).timeout
+	if hit : return
 	var die_tween = create_tween()
 	die_tween.tween_property(self, "modulate", Color(1,1,1,0), 0.5)
 	await die_tween.finished
@@ -47,8 +54,9 @@ func Throw():
 	throw_tween.tween_property(self, "global_position", target_position, fly_time)
 
 func Catch_Ball(ball):
-	print("Caught ball")
 	Global.CaughtBall.emit()
+	await get_tree().process_frame
+	if hit : return
 	modulate = Color.GREEN
 	await get_tree().create_timer(1).timeout
 	var tween = create_tween()

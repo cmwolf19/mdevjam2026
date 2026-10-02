@@ -13,10 +13,8 @@ spin_strength = 6.0
 ball_target = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1015188844]
-scale = Vector2(0.20166665, 0.20166665)
+scale = Vector2(0.15, 0.15)
 texture = ExtResource("2_dxm6s")
-centered = false
-offset = Vector2(-150, -150)
 
 [node name="Area2D" type="Area2D" parent="." unique_id=719109040]
 collision_layer = 0

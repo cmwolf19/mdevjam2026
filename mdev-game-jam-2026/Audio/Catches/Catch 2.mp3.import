@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://y3urkudgvuow"
+path="res://.godot/imported/Catch 2.mp3-a7204dee07e91a9a1e7a76df8d2cd2bf.mp3str"
+
+[deps]
+
+source_file="res://Audio/Catches/Catch 2.mp3"
+dest_files=["res://.godot/imported/Catch 2.mp3-a7204dee07e91a9a1e7a76df8d2cd2bf.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

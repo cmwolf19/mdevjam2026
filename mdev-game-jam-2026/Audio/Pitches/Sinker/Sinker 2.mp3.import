@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bxv8gow20l4wf"
+path="res://.godot/imported/Sinker 2.mp3-d6b14b12485924ec8da56c726a5d7cc0.mp3str"
+
+[deps]
+
+source_file="res://Audio/Pitches/Sinker/Sinker 2.mp3"
+dest_files=["res://.godot/imported/Sinker 2.mp3-d6b14b12485924ec8da56c726a5d7cc0.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dcfjaviuybpyi"
+path="res://.godot/imported/Paper 2.mp3-f5bdd770fdf455ad34168496ace0273a.mp3str"
+
+[deps]
+
+source_file="res://Audio/Cheatsheet/Paper 2.mp3"
+dest_files=["res://.godot/imported/Paper 2.mp3-f5bdd770fdf455ad34168496ace0273a.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

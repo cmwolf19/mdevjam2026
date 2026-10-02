@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://1svcyd6snec6"
+path="res://.godot/imported/Catch 6.mp3-8b9f177576e4f1210272a14d58573329.mp3str"
+
+[deps]
+
+source_file="res://Audio/Catches/Catch 6.mp3"
+dest_files=["res://.godot/imported/Catch 6.mp3-8b9f177576e4f1210272a14d58573329.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,6 +1,21 @@
 [gd_resource type="Theme" format=3 uid="uid://cftg4p6dwgdbg"]
 
 [ext_resource type="FontFile" uid="uid://drgv4c6g1hvte" path="res://UI/ds_digital/DS-DIGIT.TTF" id="1_74a5u"]
+[ext_resource type="FontFile" uid="uid://chwe2fnckiqg0" path="res://UI/ds_digital/DS-DIGIB.TTF" id="1_dowjc"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_05qb5"]
+bg_color = Color(0.63, 1, 0.63, 1)
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color(1, 1, 0.65, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+shadow_size = 16
+shadow_offset = Vector2(8, 8)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_74a5u"]
 bg_color = Color(0.82, 1, 0.82, 1)
@@ -16,10 +31,31 @@ corner_radius_bottom_left = 8
 shadow_size = 16
 shadow_offset = Vector2(8, 8)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dowjc"]
+bg_color = Color(0.42639998, 0.52, 0.42639998, 1)
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color(0.61, 0.61, 0.51850003, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+shadow_size = 16
+shadow_offset = Vector2(8, 8)
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dg77c"]
 bg_color = Color(0, 0.10980392, 0, 1)
 
 [resource]
+Button/colors/font_color = Color(0, 0, 0, 1)
+Button/colors/font_hover_color = Color(0, 0, 0, 1)
+Button/font_sizes/font_size = 48
+Button/fonts/font = ExtResource("1_dowjc")
+Button/styles/hover = SubResource("StyleBoxFlat_05qb5")
+Button/styles/normal = SubResource("StyleBoxFlat_74a5u")
+Button/styles/pressed = SubResource("StyleBoxFlat_dowjc")
 HBoxContainer/constants/separation = 32
 Label/colors/font_color = Color(0, 0.11, 0, 1)
 Label/colors/font_shadow_color = Color(0, 0.11, 0, 0.27450982)

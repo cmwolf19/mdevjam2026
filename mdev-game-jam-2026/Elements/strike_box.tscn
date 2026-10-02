@@ -2,10 +2,18 @@
 
 [ext_resource type="Script" uid="uid://dttkwdfb15wpu" path="res://Elements/strike_box.gd" id="1_3g33g"]
 
+[sub_resource type="Gradient" id="Gradient_3g33g"]
+offsets = PackedFloat32Array(0, 0.68075114, 1)
+colors = PackedColorArray(0, 1, 0, 0.5019608, 1, 1, 0, 0.5019608, 1, 0, 0, 0.5019608)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_3g33g"]
+gradient = SubResource("Gradient_3g33g")
+
 [node name="Strike Box" type="Polygon2D" unique_id=862971078]
 modulate = Color(1, 1, 1, 0.7529412)
-color = Color(0, 0.6500001, 1, 1)
+color = Color(0.6872149, 0.68721503, 0.6872149, 1)
 script = ExtResource("1_3g33g")
+sus_gradient = SubResource("GradientTexture1D_3g33g")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1171788350]
 monitoring = false

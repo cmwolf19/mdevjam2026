@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bwqru3n54d6gq"
+path="res://.godot/imported/Blip 7.mp3-1fb5ff7a56eb37e50be7f555a10869f4.mp3str"
+
+[deps]
+
+source_file="res://Audio/Blips/Blip 7.mp3"
+dest_files=["res://.godot/imported/Blip 7.mp3-1fb5ff7a56eb37e50be7f555a10869f4.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

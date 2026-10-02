@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://pi6spmnpps2j"
+path="res://.godot/imported/Blip 6.mp3-e06e6930a79fa84eccbac20fc96d4959.mp3str"
+
+[deps]
+
+source_file="res://Audio/Blips/Blip 6.mp3"
+dest_files=["res://.godot/imported/Blip 6.mp3-e06e6930a79fa84eccbac20fc96d4959.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

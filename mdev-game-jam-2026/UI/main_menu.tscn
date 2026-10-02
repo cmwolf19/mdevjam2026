@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://p58hfq31mpk5"]
+
+[ext_resource type="Script" uid="uid://0vg2rjvddhuv" path="res://UI/scene_switch_button.gd" id="1_p8ccj"]
+[ext_resource type="Script" uid="uid://dhjt45qm0k7ui" path="res://hand.gd" id="2_d8nwk"]
+[ext_resource type="Texture2D" uid="uid://b8pubcej0hvmr" path="res://Elements/Hand.png" id="3_4cwpn"]
+
+[node name="Main Menu" type="Node2D" unique_id=835644050]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=484949705]
+
+[node name="PlayButton" type="Button" parent="CanvasLayer" unique_id=1748500170]
+offset_left = 272.0
+offset_top = 104.0
+offset_right = 700.0
+offset_bottom = 256.0
+text = "Play"
+script = ExtResource("1_p8ccj")
+scene_id = "uid://dvope0u3df3kg"
+
+[node name="Hand" type="Node2D" parent="CanvasLayer" unique_id=1606871203]
+z_index = 2
+position = Vector2(416, 647)
+script = ExtResource("2_d8nwk")
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/Hand" unique_id=146862547]
+position = Vector2(-34, 74)
+texture = ExtResource("3_4cwpn")

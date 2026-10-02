@@ -1,0 +1,770 @@
+[gd_scene format=3 uid="uid://dvope0u3df3kg"]
+
+[ext_resource type="Script" uid="uid://blgssm0btl7si" path="res://game_manager.gd" id="1_ftk2w"]
+[ext_resource type="Texture2D" uid="uid://ba8qjmav0073" path="res://Elements/Batter/Batter.png" id="2_n2qw3"]
+[ext_resource type="Script" uid="uid://dna2qgf2vcjqq" path="res://Elements/Batter/batter.gd" id="3_ocfsu"]
+[ext_resource type="Texture2D" uid="uid://dnyury2bcubw" path="res://Elements/Pitcher/Pitcher Hold.png" id="4_vyctn"]
+[ext_resource type="Script" uid="uid://c63fowfci1hx0" path="res://Elements/Pitcher/pitcher.gd" id="5_pongv"]
+[ext_resource type="Script" uid="uid://durf07jmfpldh" path="res://box_drawer.gd" id="6_3tlt0"]
+[ext_resource type="Script" uid="uid://dtydq0td6xo3y" path="res://ball_thrower.gd" id="7_38p41"]
+[ext_resource type="PackedScene" uid="uid://djup7fmexl1dc" path="res://Elements/Ball/sinker.tscn" id="8_yaacw"]
+[ext_resource type="PackedScene" uid="uid://c4oshlsmc1n6o" path="res://Elements/Ball/curve_ball_left.tscn" id="9_oxf6n"]
+[ext_resource type="PackedScene" uid="uid://b7k1hc648l7k3" path="res://Elements/Ball/curve_ball_right.tscn" id="10_ve0tw"]
+[ext_resource type="PackedScene" uid="uid://bplfgua7nctq7" path="res://Elements/Ball/changeup.tscn" id="11_sobwn"]
+[ext_resource type="PackedScene" uid="uid://cljq7jfek6tyf" path="res://Elements/Ball/fastball.tscn" id="12_a031p"]
+[ext_resource type="Theme" uid="uid://cftg4p6dwgdbg" path="res://UI/scoreboard.tres" id="13_62c7y"]
+[ext_resource type="Script" uid="uid://b8sitxoj0x6v6" path="res://UI/callout_box.gd" id="14_8t27g"]
+[ext_resource type="Texture2D" uid="uid://c5f6ptujlrknj" path="res://UI/Paper Instructions.png" id="15_coxvs"]
+[ext_resource type="Script" uid="uid://b3mw7kmkrky7b" path="res://UI/instructions.gd" id="16_ey6md"]
+[ext_resource type="Script" uid="uid://dhjt45qm0k7ui" path="res://hand.gd" id="17_lnxka"]
+[ext_resource type="Texture2D" uid="uid://b8pubcej0hvmr" path="res://Elements/Hand.png" id="18_6ydj6"]
+[ext_resource type="Shader" uid="uid://cgikpdhxfcqey" path="res://main.gdshader" id="19_1qd6q"]
+[ext_resource type="Script" uid="uid://dll6fxuettlsh" path="res://tv.gd" id="20_pbp7t"]
+[ext_resource type="Script" uid="uid://csd14ud1oas3e" path="res://UI/game_over_panel.gd" id="21_tty2h"]
+[ext_resource type="Texture2D" uid="uid://djknpk4dliqol" path="res://Field.png" id="22_0drel"]
+[ext_resource type="Script" uid="uid://0vg2rjvddhuv" path="res://UI/scene_switch_button.gd" id="22_n2qw3"]
+[ext_resource type="Script" uid="uid://cnpdy5litlfsh" path="res://Elements/angry_fans.gd" id="23_ypam1"]
+[ext_resource type="Texture2D" uid="uid://dtpa4so0scp4p" path="res://UI/angry fan.png" id="24_l15yv"]
+[ext_resource type="Script" uid="uid://dcnnslnjlmcbv" path="res://Elements/fan.gd" id="25_x7q3p"]
+[ext_resource type="Texture2D" uid="uid://b4bq4rq001bky" path="res://UI/angry fan 2.png" id="26_ve70b"]
+[ext_resource type="Texture2D" uid="uid://d2yln5anatiws" path="res://UI/angry fan 3.png" id="27_dg8ux"]
+[ext_resource type="AudioStream" uid="uid://lv61bf38wkj5" path="res://Audio/Blips/Blip 1.mp3" id="28_au2ce"]
+[ext_resource type="AudioStream" uid="uid://cfidhmcr8ut3y" path="res://Audio/Blips/Blip 2.mp3" id="29_vlm7v"]
+[ext_resource type="AudioStream" uid="uid://cubfxuhttdxfg" path="res://Audio/Blips/Blip 3.mp3" id="30_k824k"]
+[ext_resource type="AudioStream" uid="uid://cw6cgv0rq3r0u" path="res://Audio/Blips/Blip 4.mp3" id="31_fc4fs"]
+[ext_resource type="AudioStream" uid="uid://inn6u0eolu4v" path="res://Audio/Blips/Blip 5.mp3" id="32_n1uk4"]
+[ext_resource type="AudioStream" uid="uid://pi6spmnpps2j" path="res://Audio/Blips/Blip 6.mp3" id="33_skapx"]
+[ext_resource type="AudioStream" uid="uid://bwqru3n54d6gq" path="res://Audio/Blips/Blip 7.mp3" id="34_lk0xg"]
+[ext_resource type="AudioStream" uid="uid://b0376sml28utg" path="res://Audio/Blips/Blip 8.mp3" id="35_pdcmg"]
+[ext_resource type="Script" uid="uid://s8oye82pgqh4" path="res://Elements/Pitcher/audio_listener.gd" id="36_7opui"]
+[ext_resource type="AudioStream" uid="uid://17vsjfepq3ei" path="res://Audio/Strikes/Strike 1/Strike 1a.wav" id="37_qqud6"]
+[ext_resource type="AudioStream" uid="uid://jpkh16hq5rke" path="res://Audio/Strikes/Strike 1/Strike 1b.wav" id="38_tb4r5"]
+[ext_resource type="AudioStream" uid="uid://ntd0sk0m2enn" path="res://Audio/Strikes/Strike 1/Strike 1k.wav" id="39_o0jwy"]
+[ext_resource type="AudioStream" uid="uid://cbitqw5k8uevd" path="res://Audio/Strikes/Strike 1/Strike 1l.wav" id="40_k32qb"]
+[ext_resource type="AudioStream" uid="uid://6ykrh203rpfi" path="res://Audio/Strikes/Strike 1/Strike 1m.wav" id="41_hr0e1"]
+[ext_resource type="AudioStream" uid="uid://dkeprwg3ir7h0" path="res://Audio/Strikes/Strike 1/Strike 1n.wav" id="42_00fjb"]
+[ext_resource type="AudioStream" uid="uid://dm5dntbcb3yu4" path="res://Audio/Strikes/Strike 1/Strike 1o.wav" id="43_rqrkr"]
+[ext_resource type="AudioStream" uid="uid://duk45hw7b18s1" path="res://Audio/Strikes/Strike 1/Strike 1p.wav" id="44_umj6m"]
+[ext_resource type="AudioStream" uid="uid://bomt5r1e0yl1b" path="res://Audio/Strikes/Strike 1/Strike 1q.wav" id="45_hmfir"]
+[ext_resource type="AudioStream" uid="uid://b6u4hqxpavndq" path="res://Audio/Strikes/Strike 1/Strike 1r.wav" id="46_a1xik"]
+[ext_resource type="AudioStream" uid="uid://b8poe2t4fdsdg" path="res://Audio/Strikes/Strike 1/Strike 1s.wav" id="47_houhl"]
+[ext_resource type="AudioStream" uid="uid://duxboytmqls5t" path="res://Audio/Strikes/Strike 1/Strike 1t.wav" id="48_nbt5f"]
+[ext_resource type="AudioStream" uid="uid://c53prjrplfsqm" path="res://Audio/Strikes/Strike 1/Strike 1c.wav" id="49_xtu55"]
+[ext_resource type="AudioStream" uid="uid://cxqlaosha1753" path="res://Audio/Strikes/Strike 1/Strike 1u.wav" id="50_3xu03"]
+[ext_resource type="AudioStream" uid="uid://cb5bwbrq67i1m" path="res://Audio/Strikes/Strike 1/Strike 1v.wav" id="51_x3ng2"]
+[ext_resource type="AudioStream" uid="uid://rh3h041t8jl8" path="res://Audio/Strikes/Strike 1/Strike 1w.wav" id="52_fdi4t"]
+[ext_resource type="AudioStream" uid="uid://fvfbximjjxrl" path="res://Audio/Strikes/Strike 1/Strike 1d.wav" id="53_rkqx1"]
+[ext_resource type="AudioStream" uid="uid://d1fymejv0ewss" path="res://Audio/Strikes/Strike 1/Strike 1e.wav" id="54_hxx6f"]
+[ext_resource type="AudioStream" uid="uid://bi762y0yvxyw4" path="res://Audio/Strikes/Strike 1/Strike 1f.wav" id="55_ygrx3"]
+[ext_resource type="AudioStream" uid="uid://cdsf2les5i3id" path="res://Audio/Strikes/Strike 1/Strike 1g.wav" id="56_4x46a"]
+[ext_resource type="AudioStream" uid="uid://cgc0f36d0fb5u" path="res://Audio/Strikes/Strike 1/Strike 1h.wav" id="57_4bjgk"]
+[ext_resource type="AudioStream" uid="uid://c5hqfshlpydwc" path="res://Audio/Strikes/Strike 1/Strike 1i.wav" id="58_mky8m"]
+[ext_resource type="AudioStream" uid="uid://bvppx5pkp1j38" path="res://Audio/Strikes/Strike 1/Strike 1j.wav" id="59_khmqw"]
+[ext_resource type="AudioStream" uid="uid://cwxceu6ioailf" path="res://Audio/Strikes/Strike 2/Strike 2a.wav" id="60_v6dnn"]
+[ext_resource type="AudioStream" uid="uid://u73qe1mgrqdx" path="res://Audio/Strikes/Strike 2/Strike 2b.wav" id="61_m8rop"]
+[ext_resource type="AudioStream" uid="uid://vvjq46lux70a" path="res://Audio/Strikes/Strike 2/Strike 2k.wav" id="62_32e83"]
+[ext_resource type="AudioStream" uid="uid://bgy7y2ixw8ntd" path="res://Audio/Strikes/Strike 2/Strike 2l.wav" id="63_8ji7x"]
+[ext_resource type="AudioStream" uid="uid://dlbohkgtqfr0s" path="res://Audio/Strikes/Strike 2/Strike 2m.wav" id="64_ndmmn"]
+[ext_resource type="AudioStream" uid="uid://defdbxq2hocui" path="res://Audio/Strikes/Strike 2/Strike 2n.wav" id="65_ts1mh"]
+[ext_resource type="AudioStream" uid="uid://cexcse7impoh1" path="res://Audio/Strikes/Strike 2/Strike 2o.wav" id="66_rajp3"]
+[ext_resource type="AudioStream" uid="uid://7s3vy5pkxrrl" path="res://Audio/Strikes/Strike 2/Strike 2p.wav" id="67_2a42h"]
+[ext_resource type="AudioStream" uid="uid://x31f316qbrje" path="res://Audio/Strikes/Strike 2/Strike 2q.wav" id="68_w3nrb"]
+[ext_resource type="AudioStream" uid="uid://cai507l7kjwk6" path="res://Audio/Strikes/Strike 2/Strike 2r.wav" id="69_rvron"]
+[ext_resource type="AudioStream" uid="uid://dqheirfanbucw" path="res://Audio/Strikes/Strike 2/Strike 2s.wav" id="70_qxb16"]
+[ext_resource type="AudioStream" uid="uid://bhwl4bw82rrf7" path="res://Audio/Strikes/Strike 2/Strike 2c.wav" id="71_eycxe"]
+[ext_resource type="AudioStream" uid="uid://bt05o7pofttib" path="res://Audio/Strikes/Strike 2/Strike 2d.wav" id="72_v1huc"]
+[ext_resource type="AudioStream" uid="uid://d0kp20cc2s8it" path="res://Audio/Strikes/Strike 2/Strike 2e.wav" id="73_y6oyw"]
+[ext_resource type="AudioStream" uid="uid://b3eqol4n6qg62" path="res://Audio/Strikes/Strike 2/Strike 2f.wav" id="74_f8pex"]
+[ext_resource type="AudioStream" uid="uid://dnl6ymg5avo2v" path="res://Audio/Strikes/Strike 2/Strike 2g.wav" id="75_73dqe"]
+[ext_resource type="AudioStream" uid="uid://ddgw1fmlg0pu" path="res://Audio/Strikes/Strike 2/Strike 2h.wav" id="76_1hu2o"]
+[ext_resource type="AudioStream" uid="uid://sh83nc4x7hth" path="res://Audio/Strikes/Strike 2/Strike 2i.wav" id="77_m726e"]
+[ext_resource type="AudioStream" uid="uid://c8y3d44ckkrkq" path="res://Audio/Strikes/Strike 2/Strike 2j.wav" id="78_ljlfx"]
+[ext_resource type="AudioStream" uid="uid://bdh1pj61568bj" path="res://Audio/Strikes/Strike 3/Strike 3a.wav" id="79_43rqu"]
+[ext_resource type="AudioStream" uid="uid://bmorwh6ye1nre" path="res://Audio/Strikes/Strike 3/Strike 3b.wav" id="80_b0xde"]
+[ext_resource type="AudioStream" uid="uid://c1usqfqb4gpce" path="res://Audio/Strikes/Strike 3/Strike 3k.wav" id="81_g06xd"]
+[ext_resource type="AudioStream" uid="uid://bcdb7fq71mmfe" path="res://Audio/Strikes/Strike 3/Strike 3l.wav" id="82_o3hl0"]
+[ext_resource type="AudioStream" uid="uid://cj6fxv4m16c4k" path="res://Audio/Strikes/Strike 3/Strike 3m.wav" id="83_8e5l3"]
+[ext_resource type="AudioStream" uid="uid://bdvemybw33h75" path="res://Audio/Strikes/Strike 3/Strike 3n.wav" id="84_a1itf"]
+[ext_resource type="AudioStream" uid="uid://cnf5hfipracij" path="res://Audio/Strikes/Strike 3/Strike 3o.wav" id="85_l5awe"]
+[ext_resource type="AudioStream" uid="uid://bqd6d58txlbab" path="res://Audio/Strikes/Strike 3/Strike 3p.wav" id="86_o6dfk"]
+[ext_resource type="AudioStream" uid="uid://dc7p1yvhssavf" path="res://Audio/Strikes/Strike 3/Strike 3q.wav" id="87_xpiij"]
+[ext_resource type="AudioStream" uid="uid://bss57dq4443om" path="res://Audio/Strikes/Strike 3/Strike 3r.wav" id="88_wltgx"]
+[ext_resource type="AudioStream" uid="uid://b2wwlk331163i" path="res://Audio/Strikes/Strike 3/Strike 3s.wav" id="89_p58xr"]
+[ext_resource type="AudioStream" uid="uid://frs6p1nvro6x" path="res://Audio/Strikes/Strike 3/Strike 3t.wav" id="90_jpqjj"]
+[ext_resource type="AudioStream" uid="uid://dkufs55gkq38s" path="res://Audio/Strikes/Strike 3/Strike 3c.wav" id="91_7wfhk"]
+[ext_resource type="AudioStream" uid="uid://bt305tbki3sbf" path="res://Audio/Strikes/Strike 3/Strike 3u.wav" id="92_owyim"]
+[ext_resource type="AudioStream" uid="uid://c8oqmuqx3e1mn" path="res://Audio/Strikes/Strike 3/Strike 3d.wav" id="93_jycky"]
+[ext_resource type="AudioStream" uid="uid://bn14y47hh0v5j" path="res://Audio/Strikes/Strike 3/Strike 3e.wav" id="94_4yv8r"]
+[ext_resource type="AudioStream" uid="uid://llorp3268wj" path="res://Audio/Strikes/Strike 3/Strike 3f.wav" id="95_grijt"]
+[ext_resource type="AudioStream" uid="uid://wb2ubeqpyako" path="res://Audio/Strikes/Strike 3/Strike 3g.wav" id="96_h4qi3"]
+[ext_resource type="AudioStream" uid="uid://diyjvc52lpxk7" path="res://Audio/Strikes/Strike 3/Strike 3h.wav" id="97_ly22w"]
+[ext_resource type="AudioStream" uid="uid://bs11s1l67rcs" path="res://Audio/Strikes/Strike 3/Strike 3i.wav" id="98_3d5gd"]
+[ext_resource type="AudioStream" uid="uid://cdk6uydbv4dq6" path="res://Audio/Strikes/Strike 3/Strike 3j.wav" id="99_1kcxt"]
+[ext_resource type="AudioStream" uid="uid://bpeco1com6miw" path="res://Audio/Balls/Ball 1/Ball 1a.wav" id="100_xs31x"]
+[ext_resource type="AudioStream" uid="uid://in5wx53ymvom" path="res://Audio/Balls/Ball 1/Ball 1b.wav" id="101_pao17"]
+[ext_resource type="AudioStream" uid="uid://ovikdv2cthxo" path="res://Audio/Balls/Ball 1/Ball 1c.wav" id="102_66pjf"]
+[ext_resource type="AudioStream" uid="uid://daqxqgp01krin" path="res://Audio/Balls/Ball 1/Ball 1d.wav" id="103_d088c"]
+[ext_resource type="AudioStream" uid="uid://dvjs135sei8ut" path="res://Audio/Balls/Ball 1/Ball 1e.wav" id="104_m48et"]
+[ext_resource type="AudioStream" uid="uid://c7bpkh24x2ocw" path="res://Audio/Balls/Ball 1/Ball 1f.wav" id="105_pwu8k"]
+[ext_resource type="AudioStream" uid="uid://bxp7v2xqrb25i" path="res://Audio/Balls/Ball 1/Ball 1g.wav" id="106_bu4kv"]
+[ext_resource type="AudioStream" uid="uid://dsfhoadobne6g" path="res://Audio/Balls/Ball 1/Ball 1h.wav" id="107_bgmx1"]
+[ext_resource type="AudioStream" uid="uid://clkc1y2r026m1" path="res://Audio/Balls/Ball 1/Ball 1i.wav" id="108_xpghj"]
+[ext_resource type="AudioStream" uid="uid://ch18t2lwefpnk" path="res://Audio/Balls/Ball 1/Ball 1j.wav" id="109_x2mo0"]
+[ext_resource type="AudioStream" uid="uid://bdvti6rqm10ow" path="res://Audio/Balls/Ball 2/Ball 2a.wav" id="110_u2d5n"]
+[ext_resource type="AudioStream" uid="uid://lnuvmp2ehp2p" path="res://Audio/Balls/Ball 2/Ball 2b.wav" id="111_1ojyo"]
+[ext_resource type="AudioStream" uid="uid://jmj1qhlwro4q" path="res://Audio/Balls/Ball 2/Ball 2k.wav" id="112_grtrm"]
+[ext_resource type="AudioStream" uid="uid://dhrffx05b2h7d" path="res://Audio/Balls/Ball 2/Ball 2l.wav" id="113_gkuwu"]
+[ext_resource type="AudioStream" uid="uid://b1axs8yylfscn" path="res://Audio/Balls/Ball 2/Ball 2m.wav" id="114_bhfq3"]
+[ext_resource type="AudioStream" uid="uid://swpck71xcvpf" path="res://Audio/Balls/Ball 2/Ball 2c.wav" id="115_rlbrn"]
+[ext_resource type="AudioStream" uid="uid://clgh81q0d7mks" path="res://Audio/Balls/Ball 2/Ball 2d.wav" id="116_a4tqf"]
+[ext_resource type="AudioStream" uid="uid://bvyleasslasht" path="res://Audio/Balls/Ball 2/Ball 2e.wav" id="117_2qult"]
+[ext_resource type="AudioStream" uid="uid://bsxwt7gn4cah2" path="res://Audio/Balls/Ball 2/Ball 2f.wav" id="118_bgsod"]
+[ext_resource type="AudioStream" uid="uid://c747uhxqm35l" path="res://Audio/Balls/Ball 2/Ball 2g.wav" id="119_ni5lk"]
+[ext_resource type="AudioStream" uid="uid://v717dcuicjet" path="res://Audio/Balls/Ball 2/Ball 2h.wav" id="120_meeaj"]
+[ext_resource type="AudioStream" uid="uid://uc1qwjlktq4a" path="res://Audio/Balls/Ball 2/Ball 2i.wav" id="121_sav7u"]
+[ext_resource type="AudioStream" uid="uid://cnn2o4vrte4sa" path="res://Audio/Balls/Ball 2/Ball 2j.wav" id="122_1cck5"]
+[ext_resource type="AudioStream" uid="uid://pk1fab7tp2sc" path="res://Audio/Balls/Ball 3/Ball 3a.wav" id="123_b5cy6"]
+[ext_resource type="AudioStream" uid="uid://dy1104lehwfqh" path="res://Audio/Balls/Ball 3/Ball 3b.wav" id="124_17o61"]
+[ext_resource type="AudioStream" uid="uid://dylqhaschrljk" path="res://Audio/Balls/Ball 3/Ball 3k.wav" id="125_4xe53"]
+[ext_resource type="AudioStream" uid="uid://dvb8dvxo74eor" path="res://Audio/Balls/Ball 3/Ball 3l.wav" id="126_qucpf"]
+[ext_resource type="AudioStream" uid="uid://carmbqci3eh2t" path="res://Audio/Balls/Ball 3/Ball 3m.wav" id="127_5h42g"]
+[ext_resource type="AudioStream" uid="uid://ddaid77dneu12" path="res://Audio/Balls/Ball 3/Ball 3c.wav" id="128_k2jum"]
+[ext_resource type="AudioStream" uid="uid://bv0hb76q1x5lw" path="res://Audio/Balls/Ball 3/Ball 3d.wav" id="129_6af73"]
+[ext_resource type="AudioStream" uid="uid://bbmvs56ajk4k" path="res://Audio/Balls/Ball 3/Ball 3e.wav" id="130_0rfkv"]
+[ext_resource type="AudioStream" uid="uid://b6q4clcuanave" path="res://Audio/Balls/Ball 3/Ball 3f.wav" id="131_kmej1"]
+[ext_resource type="AudioStream" uid="uid://duuu8eiuop3bg" path="res://Audio/Balls/Ball 3/Ball 3g.wav" id="132_0kc4w"]
+[ext_resource type="AudioStream" uid="uid://b0x01bc5gr5bb" path="res://Audio/Balls/Ball 3/Ball 3h.wav" id="133_vfh27"]
+[ext_resource type="AudioStream" uid="uid://dlowhcfal38gr" path="res://Audio/Balls/Ball 3/Ball 3i.wav" id="134_7k812"]
+[ext_resource type="AudioStream" uid="uid://c0fcu6eie5odv" path="res://Audio/Balls/Ball 3/Ball 3j.wav" id="135_mbbgv"]
+[ext_resource type="AudioStream" uid="uid://cf6ujim3nnns0" path="res://Audio/Balls/Ball 4/Ball 4a.wav" id="136_ufb8d"]
+[ext_resource type="AudioStream" uid="uid://b11v84dg448ob" path="res://Audio/Balls/Ball 4/Ball 4b.wav" id="137_8cwpg"]
+[ext_resource type="AudioStream" uid="uid://c3fe2dkhkihb3" path="res://Audio/Balls/Ball 4/Ball 4k.wav" id="138_6d8yb"]
+[ext_resource type="AudioStream" uid="uid://p0hie8un4w1g" path="res://Audio/Balls/Ball 4/Ball 4l.wav" id="139_qja6a"]
+[ext_resource type="AudioStream" uid="uid://omqy83yqhl3v" path="res://Audio/Balls/Ball 4/Ball 4m.wav" id="140_a4d6h"]
+[ext_resource type="AudioStream" uid="uid://dy2keutog7lku" path="res://Audio/Balls/Ball 4/Ball 4c.wav" id="141_hx28m"]
+[ext_resource type="AudioStream" uid="uid://x517reeqihg5" path="res://Audio/Balls/Ball 4/Ball 4d.wav" id="142_sxh7l"]
+[ext_resource type="AudioStream" uid="uid://cjs6y2ndc0eeb" path="res://Audio/Balls/Ball 4/Ball 4e.wav" id="143_se6h4"]
+[ext_resource type="AudioStream" uid="uid://cim86jecgfrfu" path="res://Audio/Balls/Ball 4/Ball 4f.wav" id="144_ijr4t"]
+[ext_resource type="AudioStream" uid="uid://cgqpkhgm6w4xd" path="res://Audio/Balls/Ball 4/Ball 4g.wav" id="145_4c1kh"]
+[ext_resource type="AudioStream" uid="uid://bahoh3c6bcbjw" path="res://Audio/Balls/Ball 4/Ball 4h.wav" id="146_jg4bg"]
+[ext_resource type="AudioStream" uid="uid://beiesxr66oujb" path="res://Audio/Balls/Ball 4/Ball 4i.wav" id="147_de3ve"]
+[ext_resource type="AudioStream" uid="uid://cmeoey8kjhhl7" path="res://Audio/Balls/Ball 4/Ball 4j.wav" id="148_d78ml"]
+[ext_resource type="AudioStream" uid="uid://c3bt1lbefw1wq" path="res://Audio/Suspicion/Sus 1.mp3" id="149_jk26a"]
+[ext_resource type="AudioStream" uid="uid://bql6wbvbgu1cy" path="res://Audio/Suspicion/Sus 2.mp3" id="150_j57ro"]
+[ext_resource type="AudioStream" uid="uid://cyvglhbvykm3l" path="res://Audio/Suspicion/Sus 3.mp3" id="151_uhlyy"]
+[ext_resource type="AudioStream" uid="uid://blwbofkh68s0n" path="res://Audio/Suspicion/Sus 4.mp3" id="152_qsq7k"]
+[ext_resource type="AudioStream" uid="uid://b7t4k5mlxxrmu" path="res://Audio/Catches/Catch 1.mp3" id="153_telgb"]
+[ext_resource type="AudioStream" uid="uid://y3urkudgvuow" path="res://Audio/Catches/Catch 2.mp3" id="154_r6i6e"]
+[ext_resource type="AudioStream" uid="uid://bvecfupubtsyw" path="res://Audio/Catches/Catch 3.mp3" id="155_87lfc"]
+[ext_resource type="AudioStream" uid="uid://cqo7011cnbf36" path="res://Audio/Catches/Catch 4.mp3" id="156_wvkww"]
+[ext_resource type="AudioStream" uid="uid://lhhhr3mjhieo" path="res://Audio/Catches/Catch 5.mp3" id="157_m5eon"]
+[ext_resource type="AudioStream" uid="uid://1svcyd6snec6" path="res://Audio/Catches/Catch 6.mp3" id="158_7yqu5"]
+[ext_resource type="AudioStream" uid="uid://cim8u2sr4xm1x" path="res://Audio/Scoring Hit.mp3" id="159_caaio"]
+[ext_resource type="AudioStream" uid="uid://4docbam7ro25" path="res://Audio/Title Drops/Title 2.mp3" id="160_x8imp"]
+[ext_resource type="AudioStream" uid="uid://ds1m6b3rmnths" path="res://Audio/Title Drops/Title 4.mp3" id="161_846x1"]
+[ext_resource type="AudioStream" uid="uid://caixxc3q38u6l" path="res://Audio/Title Drops/Title 21.mp3" id="162_24w4l"]
+[ext_resource type="AudioStream" uid="uid://clq3qkc6olil2" path="res://Audio/Title Drops/Title 22.mp3" id="163_ocygo"]
+[ext_resource type="AudioStream" uid="uid://dn77rgcjoxfg4" path="res://Audio/Title Drops/Title 6.mp3" id="164_8yn2p"]
+[ext_resource type="AudioStream" uid="uid://c88ex2ovkyew0" path="res://Audio/Title Drops/Title 8.mp3" id="165_1xnqo"]
+[ext_resource type="AudioStream" uid="uid://boksyynkt84nc" path="res://Audio/Title Drops/Title 9.mp3" id="166_7cddm"]
+[ext_resource type="AudioStream" uid="uid://bqck561x2qt3d" path="res://Audio/Title Drops/Title 12.mp3" id="167_7h5tq"]
+[ext_resource type="AudioStream" uid="uid://ci7vr56esw0pq" path="res://Audio/Title Drops/Title 13.mp3" id="168_1xmu0"]
+[ext_resource type="AudioStream" uid="uid://bk053a4nc08kf" path="res://Audio/Title Drops/Title 15.mp3" id="169_gct4p"]
+[ext_resource type="AudioStream" uid="uid://cikqu7xurrffi" path="res://Audio/Title Drops/Title 16.mp3" id="170_rbpmf"]
+[ext_resource type="AudioStream" uid="uid://cflotuxmwu3eo" path="res://Audio/Title Drops/Title 18.mp3" id="171_gmuyv"]
+[ext_resource type="AudioStream" uid="uid://d4cg3u5ghjarq" path="res://Audio/Crowd Noise/Crowd 2.wav" id="172_qg64t"]
+[ext_resource type="AudioStream" uid="uid://cfp4j76e1mpbu" path="res://Audio/Crowd Noise/Crowd 3.wav" id="173_rpjb4"]
+[ext_resource type="AudioStream" uid="uid://csaa60oqrpedw" path="res://Audio/Crowd Noise/Crowd 4.wav" id="174_u3kp2"]
+[ext_resource type="AudioStream" uid="uid://cnbbopaqdla74" path="res://Audio/Crowd Noise/Crowd 5.wav" id="175_kdfni"]
+[ext_resource type="AudioStream" uid="uid://dj232ys25xkra" path="res://Audio/Crowd Noise/Crowd 6.wav" id="176_x07mb"]
+[ext_resource type="Script" uid="uid://dwewapc480e8x" path="res://Elements/crowd_audio.gd" id="177_jbuo8"]
+[ext_resource type="AudioStream" uid="uid://dorgm07alggm6" path="res://Audio/Game Over.mp3" id="179_ocfsu"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_x1a4p"]
+shader = ExtResource("19_1qd6q")
+shader_parameter/brightness = 1.41600006726
+shader_parameter/contrast = 1.08
+shader_parameter/saturation = 1.1
+shader_parameter/gamma = 1.05
+shader_parameter/curvature = 0.0590000028025
+shader_parameter/corner_soften = 0.0
+shader_parameter/vignette = 0.1130000053675
+shader_parameter/scanline_strength = 0.450000021375
+shader_parameter/scanline_density = 1.15
+shader_parameter/interlace_strength = 0.2
+shader_parameter/mask_strength = 1.0
+shader_parameter/mask_scale = 1.0
+shader_parameter/chroma_offset_px = 1.6
+shader_parameter/luma_smear_px = 2.2
+shader_parameter/jitter_px = 0.650000030875
+shader_parameter/wobble_px = 0.0
+shader_parameter/tape_noise = 0.21200001007
+shader_parameter/tape_lines = 0.0
+shader_parameter/roll_speed = 0.1
+shader_parameter/roll_strength = 0.15
+shader_parameter/glow_strength = 2.0
+shader_parameter/glow_threshold = 0.750000035625
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_g3y5b"]
+streams_count = 8
+stream_0/stream = ExtResource("28_au2ce")
+stream_1/stream = ExtResource("29_vlm7v")
+stream_2/stream = ExtResource("30_k824k")
+stream_3/stream = ExtResource("31_fc4fs")
+stream_4/stream = ExtResource("32_n1uk4")
+stream_5/stream = ExtResource("33_skapx")
+stream_6/stream = ExtResource("34_lk0xg")
+stream_7/stream = ExtResource("35_pdcmg")
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_dg77c"]
+streams_count = 23
+stream_0/stream = ExtResource("37_qqud6")
+stream_1/stream = ExtResource("38_tb4r5")
+stream_2/stream = ExtResource("49_xtu55")
+stream_3/stream = ExtResource("53_rkqx1")
+stream_4/stream = ExtResource("54_hxx6f")
+stream_5/stream = ExtResource("55_ygrx3")
+stream_6/stream = ExtResource("56_4x46a")
+stream_7/stream = ExtResource("57_4bjgk")
+stream_8/stream = ExtResource("58_mky8m")
+stream_9/stream = ExtResource("59_khmqw")
+stream_10/stream = ExtResource("39_o0jwy")
+stream_11/stream = ExtResource("40_k32qb")
+stream_12/stream = ExtResource("41_hr0e1")
+stream_13/stream = ExtResource("42_00fjb")
+stream_14/stream = ExtResource("43_rqrkr")
+stream_15/stream = ExtResource("44_umj6m")
+stream_16/stream = ExtResource("45_hmfir")
+stream_17/stream = ExtResource("46_a1xik")
+stream_18/stream = ExtResource("47_houhl")
+stream_19/stream = ExtResource("48_nbt5f")
+stream_20/stream = ExtResource("50_3xu03")
+stream_21/stream = ExtResource("51_x3ng2")
+stream_22/stream = ExtResource("52_fdi4t")
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_ycdy4"]
+streams_count = 19
+stream_0/stream = ExtResource("60_v6dnn")
+stream_1/stream = ExtResource("61_m8rop")
+stream_2/stream = ExtResource("71_eycxe")
+stream_3/stream = ExtResource("72_v1huc")
+stream_4/stream = ExtResource("73_y6oyw")
+stream_5/stream = ExtResource("74_f8pex")
+stream_6/stream = ExtResource("75_73dqe")
+stream_7/stream = ExtResource("76_1hu2o")
+stream_8/stream = ExtResource("77_m726e")
+stream_9/stream = ExtResource("78_ljlfx")
+stream_10/stream = ExtResource("62_32e83")
+stream_11/stream = ExtResource("63_8ji7x")
+stream_12/stream = ExtResource("64_ndmmn")
+stream_13/stream = ExtResource("65_ts1mh")
+stream_14/stream = ExtResource("66_rajp3")
+stream_15/stream = ExtResource("67_2a42h")
+stream_16/stream = ExtResource("68_w3nrb")
+stream_17/stream = ExtResource("69_rvron")
+stream_18/stream = ExtResource("70_qxb16")
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_w48qg"]
+streams_count = 21
+stream_0/stream = ExtResource("79_43rqu")
+stream_1/stream = ExtResource("80_b0xde")
+stream_2/stream = ExtResource("91_7wfhk")
+stream_3/stream = ExtResource("93_jycky")
+stream_4/stream = ExtResource("94_4yv8r")
+stream_5/stream = ExtResource("95_grijt")
+stream_6/stream = ExtResource("96_h4qi3")
+stream_7/stream = ExtResource("97_ly22w")
+stream_8/stream = ExtResource("98_3d5gd")
+stream_9/stream = ExtResource("99_1kcxt")
+stream_10/stream = ExtResource("81_g06xd")
+stream_11/stream = ExtResource("82_o3hl0")
+stream_12/stream = ExtResource("83_8e5l3")
+stream_13/stream = ExtResource("84_a1itf")
+stream_14/stream = ExtResource("85_l5awe")
+stream_15/stream = ExtResource("86_o6dfk")
+stream_16/stream = ExtResource("87_xpiij")
+stream_17/stream = ExtResource("88_wltgx")
+stream_18/stream = ExtResource("89_p58xr")
+stream_19/stream = ExtResource("90_jpqjj")
+stream_20/stream = ExtResource("92_owyim")
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_vivmo"]
+streams_count = 10
+stream_0/stream = ExtResource("100_xs31x")
+stream_1/stream = ExtResource("101_pao17")
+stream_2/stream = ExtResource("102_66pjf")
+stream_3/stream = ExtResource("103_d088c")
+stream_4/stream = ExtResource("104_m48et")
+stream_5/stream = ExtResource("105_pwu8k")
+stream_6/stream = ExtResource("106_bu4kv")
+stream_7/stream = ExtResource("107_bgmx1")
+stream_8/stream = ExtResource("108_xpghj")
+stream_9/stream = ExtResource("109_x2mo0")
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_2cqfq"]
+streams_count = 13
+stream_0/stream = ExtResource("110_u2d5n")
+stream_1/stream = ExtResource("111_1ojyo")
+stream_2/stream = ExtResource("115_rlbrn")
+stream_3/stream = ExtResource("116_a4tqf")
+stream_4/stream = ExtResource("117_2qult")
+stream_5/stream = ExtResource("118_bgsod")
+stream_6/stream = ExtResource("119_ni5lk")
+stream_7/stream = ExtResource("120_meeaj")
+stream_8/stream = ExtResource("121_sav7u")
+stream_9/stream = ExtResource("122_1cck5")
+stream_10/stream = ExtResource("112_grtrm")
+stream_11/stream = ExtResource("113_gkuwu")
+stream_12/stream = ExtResource("114_bhfq3")
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_yaehf"]
+streams_count = 13
+stream_0/stream = ExtResource("123_b5cy6")
+stream_1/stream = ExtResource("124_17o61")
+stream_2/stream = ExtResource("128_k2jum")
+stream_3/stream = ExtResource("129_6af73")
+stream_4/stream = ExtResource("130_0rfkv")
+stream_5/stream = ExtResource("131_kmej1")
+stream_6/stream = ExtResource("132_0kc4w")
+stream_7/stream = ExtResource("133_vfh27")
+stream_8/stream = ExtResource("134_7k812")
+stream_9/stream = ExtResource("135_mbbgv")
+stream_10/stream = ExtResource("125_4xe53")
+stream_11/stream = ExtResource("126_qucpf")
+stream_12/stream = ExtResource("127_5h42g")
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_074og"]
+streams_count = 13
+stream_0/stream = ExtResource("136_ufb8d")
+stream_1/stream = ExtResource("137_8cwpg")
+stream_2/stream = ExtResource("141_hx28m")
+stream_3/stream = ExtResource("142_sxh7l")
+stream_4/stream = ExtResource("143_se6h4")
+stream_5/stream = ExtResource("144_ijr4t")
+stream_6/stream = ExtResource("145_4c1kh")
+stream_7/stream = ExtResource("146_jg4bg")
+stream_8/stream = ExtResource("147_de3ve")
+stream_9/stream = ExtResource("148_d78ml")
+stream_10/stream = ExtResource("138_6d8yb")
+stream_11/stream = ExtResource("139_qja6a")
+stream_12/stream = ExtResource("140_a4d6h")
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_x1a4p"]
+streams_count = 4
+stream_0/stream = ExtResource("149_jk26a")
+stream_1/stream = ExtResource("150_j57ro")
+stream_2/stream = ExtResource("151_uhlyy")
+stream_3/stream = ExtResource("152_qsq7k")
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_6gr3f"]
+streams_count = 6
+stream_0/stream = ExtResource("153_telgb")
+stream_1/stream = ExtResource("154_r6i6e")
+stream_2/stream = ExtResource("155_87lfc")
+stream_3/stream = ExtResource("156_wvkww")
+stream_4/stream = ExtResource("157_m5eon")
+stream_5/stream = ExtResource("158_7yqu5")
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_nycv6"]
+streams_count = 12
+stream_0/stream = ExtResource("160_x8imp")
+stream_1/stream = ExtResource("161_846x1")
+stream_2/stream = ExtResource("164_8yn2p")
+stream_3/stream = ExtResource("165_1xnqo")
+stream_4/stream = ExtResource("166_7cddm")
+stream_5/stream = ExtResource("167_7h5tq")
+stream_6/stream = ExtResource("168_1xmu0")
+stream_7/stream = ExtResource("169_gct4p")
+stream_8/stream = ExtResource("170_rbpmf")
+stream_9/stream = ExtResource("171_gmuyv")
+stream_10/stream = ExtResource("162_24w4l")
+stream_11/stream = ExtResource("163_ocygo")
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_qflyo"]
+streams_count = 5
+stream_0/stream = ExtResource("172_qg64t")
+stream_1/stream = ExtResource("173_rpjb4")
+stream_2/stream = ExtResource("174_u3kp2")
+stream_3/stream = ExtResource("175_kdfni")
+stream_4/stream = ExtResource("176_x07mb")
+
+[node name="Baseball Game" type="Node2D" unique_id=1651536846]
+
+[node name="Game Manager" type="Node" parent="." unique_id=345914391]
+script = ExtResource("1_ftk2w")
+
+[node name="Timer" type="Timer" parent="Game Manager" unique_id=42179590]
+wait_time = 2.0
+one_shot = true
+autostart = true
+
+[node name="Batter" type="Sprite2D" parent="." unique_id=591299744]
+position = Vector2(802, 405)
+scale = Vector2(0.49415588, 0.49415585)
+texture = ExtResource("2_n2qw3")
+script = ExtResource("3_ocfsu")
+
+[node name="Pitcher" type="Sprite2D" parent="." unique_id=1323250467]
+z_index = -1
+position = Vector2(635.00006, 449)
+scale = Vector2(0.104532205, 0.104532205)
+texture = ExtResource("4_vyctn")
+offset = Vector2(0, -529)
+script = ExtResource("5_pongv")
+
+[node name="Box Drawer" type="Node2D" parent="." unique_id=1806426225]
+script = ExtResource("6_3tlt0")
+
+[node name="Ball Thrower" type="Node2D" parent="." unique_id=1883267432]
+position = Vector2(636, 412)
+script = ExtResource("7_38p41")
+throw_range = Vector2i(100, 32)
+balls = Array[PackedScene]([ExtResource("8_yaacw"), ExtResource("9_oxf6n"), ExtResource("10_ve0tw"), ExtResource("11_sobwn"), ExtResource("12_a031p")])
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1401653325]
+
+[node name="Scoreboard 2" type="PanelContainer" parent="CanvasLayer" unique_id=955446033]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -395.0
+offset_top = 8.0
+offset_right = -8.0
+offset_bottom = 126.0
+grow_horizontal = 0
+theme = ExtResource("13_62c7y")
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/Scoreboard 2" unique_id=2109126605]
+layout_mode = 2
+theme = ExtResource("13_62c7y")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Scoreboard 2/MarginContainer" unique_id=954455278]
+layout_mode = 2
+theme = ExtResource("13_62c7y")
+
+[node name="Control" type="Control" parent="CanvasLayer/Scoreboard 2/MarginContainer/HBoxContainer" unique_id=103979817]
+visible = false
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Scoreboard 2/MarginContainer/HBoxContainer" unique_id=91140746]
+layout_mode = 2
+theme = ExtResource("13_62c7y")
+alignment = 1
+
+[node name="BallLabel2" type="Label" parent="CanvasLayer/Scoreboard 2/MarginContainer/HBoxContainer/VBoxContainer" unique_id=318809550]
+layout_mode = 2
+theme = ExtResource("13_62c7y")
+text = "BALL"
+horizontal_alignment = 1
+
+[node name="BallCountLabel" type="Label" parent="CanvasLayer/Scoreboard 2/MarginContainer/HBoxContainer/VBoxContainer" unique_id=50036862]
+unique_name_in_owner = true
+layout_mode = 2
+theme = ExtResource("13_62c7y")
+text = "00"
+horizontal_alignment = 1
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="CanvasLayer/Scoreboard 2/MarginContainer/HBoxContainer" unique_id=1856445393]
+layout_mode = 2
+theme = ExtResource("13_62c7y")
+alignment = 1
+
+[node name="StrikeLabel3" type="Label" parent="CanvasLayer/Scoreboard 2/MarginContainer/HBoxContainer/VBoxContainer2" unique_id=2020140190]
+layout_mode = 2
+theme = ExtResource("13_62c7y")
+text = "STRIKE"
+horizontal_alignment = 1
+
+[node name="StrikeCountLabel" type="Label" parent="CanvasLayer/Scoreboard 2/MarginContainer/HBoxContainer/VBoxContainer2" unique_id=1397371759]
+unique_name_in_owner = true
+layout_mode = 2
+theme = ExtResource("13_62c7y")
+text = "00"
+horizontal_alignment = 1
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="CanvasLayer/Scoreboard 2/MarginContainer/HBoxContainer" unique_id=133532866]
+layout_mode = 2
+theme = ExtResource("13_62c7y")
+alignment = 1
+
+[node name="OutLabel2" type="Label" parent="CanvasLayer/Scoreboard 2/MarginContainer/HBoxContainer/VBoxContainer3" unique_id=1974046383]
+layout_mode = 2
+theme = ExtResource("13_62c7y")
+text = "OUT"
+horizontal_alignment = 1
+
+[node name="OutCountLabel" type="Label" parent="CanvasLayer/Scoreboard 2/MarginContainer/HBoxContainer/VBoxContainer3" unique_id=1440654948]
+unique_name_in_owner = true
+layout_mode = 2
+theme = ExtResource("13_62c7y")
+text = "00"
+horizontal_alignment = 1
+
+[node name="Control2" type="Control" parent="CanvasLayer/Scoreboard 2/MarginContainer/HBoxContainer" unique_id=2029067892]
+visible = false
+layout_mode = 2
+
+[node name="Callout Box" type="PanelContainer" parent="CanvasLayer" unique_id=208594494]
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 556.0
+offset_bottom = 88.0
+offset_transform_enabled = true
+theme = ExtResource("13_62c7y")
+script = ExtResource("14_8t27g")
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/Callout Box" unique_id=1467687401]
+custom_minimum_size = Vector2(532, 106)
+layout_mode = 2
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="SuspicionDisplay" type="VBoxContainer" parent="CanvasLayer/Callout Box/MarginContainer" unique_id=2061356290]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Suspicion Meter" type="ProgressBar" parent="CanvasLayer/Callout Box/MarginContainer/SuspicionDisplay" unique_id=496282202]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(512, 32)
+layout_mode = 2
+theme = ExtResource("13_62c7y")
+max_value = 10.0
+show_percentage = false
+
+[node name="Label" type="Label" parent="CanvasLayer/Callout Box/MarginContainer/SuspicionDisplay" unique_id=1555074194]
+layout_mode = 2
+text = "SUSPICION LEVEL"
+horizontal_alignment = 1
+
+[node name="TextDisplay" type="VBoxContainer" parent="CanvasLayer/Callout Box/MarginContainer" unique_id=116727199]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="PitchCallLabel" type="Label" parent="CanvasLayer/Callout Box/MarginContainer/TextDisplay" unique_id=1346474506]
+unique_name_in_owner = true
+layout_mode = 2
+text = "AND HERE'S THE PITCH..."
+visible_characters_behavior = 1
+
+[node name="ResultLabel" type="Label" parent="CanvasLayer/Callout Box/MarginContainer/TextDisplay" unique_id=1897702221]
+unique_name_in_owner = true
+layout_mode = 2
+text = "IT'S A STRIKE!"
+visible_characters_behavior = 1
+
+[node name="Instructions" type="TextureRect" parent="CanvasLayer" unique_id=396856840]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = -88.0
+offset_top = -97.0
+offset_right = 379.0
+offset_bottom = 376.0
+grow_vertical = 0
+mouse_filter = 0
+texture = ExtResource("15_coxvs")
+script = ExtResource("16_ey6md")
+
+[node name="Hand" type="Node2D" parent="CanvasLayer" unique_id=620027000]
+z_index = 2
+position = Vector2(416, 647)
+script = ExtResource("17_lnxka")
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/Hand" unique_id=1574075714]
+position = Vector2(-34, 74)
+texture = ExtResource("18_6ydj6")
+
+[node name="TV" type="ColorRect" parent="CanvasLayer" unique_id=1967314951]
+visible = false
+material = SubResource("ShaderMaterial_x1a4p")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("20_pbp7t")
+
+[node name="Flash" type="ColorRect" parent="CanvasLayer" unique_id=252298669]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Game Over Panel" type="PanelContainer" parent="CanvasLayer" unique_id=1732987263]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -247.5
+offset_top = -123.0
+offset_right = 247.5
+offset_bottom = 27.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("13_62c7y")
+script = ExtResource("21_tty2h")
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/Game Over Panel" unique_id=65669449]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Game Over Panel/MarginContainer" unique_id=1614631696]
+layout_mode = 2
+
+[node name="TitleLabel" type="Label" parent="CanvasLayer/Game Over Panel/MarginContainer/VBoxContainer" unique_id=1304774592]
+layout_mode = 2
+theme = ExtResource("13_62c7y")
+theme_override_font_sizes/font_size = 96
+text = "YOU'RE OUT!"
+horizontal_alignment = 1
+uppercase = true
+
+[node name="DescriptionLabel" type="Label" parent="CanvasLayer/Game Over Panel/MarginContainer/VBoxContainer" unique_id=96487563]
+layout_mode = 2
+theme = ExtResource("13_62c7y")
+text = "batter hit a homer."
+horizontal_alignment = 1
+uppercase = true
+
+[node name="MenuButton" type="Button" parent="CanvasLayer" unique_id=471085788]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -122.75
+offset_top = 119.5
+offset_right = 122.75
+offset_bottom = 184.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("13_62c7y")
+text = "Main Menu"
+script = ExtResource("22_n2qw3")
+scene_id = "uid://p58hfq31mpk5"
+
+[node name="BG" type="Sprite2D" parent="." unique_id=487751033]
+z_index = -99
+position = Vector2(640, 360)
+scale = Vector2(1.2421765, 1.0805556)
+texture = ExtResource("22_0drel")
+
+[node name="Fans" type="Node2D" parent="." unique_id=1880846682]
+position = Vector2(1400, 289)
+rotation = -0.4774938
+scale = Vector2(0.39585477, 0.39585477)
+script = ExtResource("23_ypam1")
+
+[node name="Angry Fans" type="Sprite2D" parent="Fans" unique_id=1836128493]
+scale = Vector2(1.0000002, 1.0000002)
+texture = ExtResource("24_l15yv")
+script = ExtResource("25_x7q3p")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Fans" unique_id=292779892]
+position = Vector2(-52.097412, 172.14502)
+scale = Vector2(1.0000002, 1.0000002)
+texture = ExtResource("26_ve70b")
+script = ExtResource("25_x7q3p")
+
+[node name="Sprite2D3" type="Sprite2D" parent="Fans" unique_id=529050469]
+position = Vector2(-235.05273, 492.74902)
+rotation = 0.33312258
+scale = Vector2(1.7682977, 1.5838275)
+texture = ExtResource("27_dg8ux")
+script = ExtResource("25_x7q3p")
+
+[node name="Chirp" type="AudioStreamPlayer" parent="." unique_id=1121514280]
+stream = SubResource("AudioStreamRandomizer_g3y5b")
+script = ExtResource("36_7opui")
+key = "Chirp"
+
+[node name="StrikeAudio1" type="AudioStreamPlayer" parent="." unique_id=301411090]
+stream = SubResource("AudioStreamRandomizer_dg77c")
+bus = &"Announcer"
+script = ExtResource("36_7opui")
+key = "Strike1"
+
+[node name="StrikeAudio2" type="AudioStreamPlayer" parent="." unique_id=2042585432]
+stream = SubResource("AudioStreamRandomizer_ycdy4")
+bus = &"Announcer"
+script = ExtResource("36_7opui")
+key = "Strike2"
+
+[node name="StrikeAudio3" type="AudioStreamPlayer" parent="." unique_id=1054532383]
+stream = SubResource("AudioStreamRandomizer_w48qg")
+bus = &"Announcer"
+script = ExtResource("36_7opui")
+key = "Strike3"
+
+[node name="BallAudio1" type="AudioStreamPlayer" parent="." unique_id=847099213]
+stream = SubResource("AudioStreamRandomizer_vivmo")
+bus = &"Announcer"
+script = ExtResource("36_7opui")
+key = "Ball1"
+
+[node name="BallAudio2" type="AudioStreamPlayer" parent="." unique_id=857365899]
+stream = SubResource("AudioStreamRandomizer_2cqfq")
+bus = &"Announcer"
+script = ExtResource("36_7opui")
+key = "Ball2"
+
+[node name="BallAudio3" type="AudioStreamPlayer" parent="." unique_id=660768398]
+stream = SubResource("AudioStreamRandomizer_yaehf")
+bus = &"Announcer"
+script = ExtResource("36_7opui")
+key = "Ball3"
+
+[node name="BallAudio4" type="AudioStreamPlayer" parent="." unique_id=697098357]
+stream = SubResource("AudioStreamRandomizer_074og")
+bus = &"Announcer"
+script = ExtResource("36_7opui")
+key = "Ball4"
+
+[node name="Suspision" type="AudioStreamPlayer" parent="." unique_id=1696786302]
+stream = SubResource("AudioStreamRandomizer_x1a4p")
+volume_db = -8.0
+bus = &"Fans"
+script = ExtResource("36_7opui")
+key = "Sus"
+
+[node name="Catch" type="AudioStreamPlayer" parent="." unique_id=991524929]
+stream = SubResource("AudioStreamRandomizer_6gr3f")
+volume_db = -8.0
+script = ExtResource("36_7opui")
+key = "Catch"
+
+[node name="Hit" type="AudioStreamPlayer" parent="." unique_id=268495674]
+stream = ExtResource("159_caaio")
+volume_db = -8.0
+bus = &"Hit"
+script = ExtResource("36_7opui")
+key = "Hit"
+
+[node name="Cheating" type="AudioStreamPlayer" parent="." unique_id=692079976]
+stream = SubResource("AudioStreamRandomizer_nycv6")
+volume_db = -8.0
+bus = &"Announcer"
+script = ExtResource("36_7opui")
+key = "Cheating"
+
+[node name="Crowd" type="AudioStreamPlayer" parent="." unique_id=960826803]
+stream = SubResource("AudioStreamRandomizer_qflyo")
+volume_db = -15.0
+autoplay = true
+script = ExtResource("177_jbuo8")
+
+[node name="Loss" type="AudioStreamPlayer" parent="." unique_id=541423494]
+stream = ExtResource("179_ocfsu")
+volume_db = -10.0
+script = ExtResource("36_7opui")
+key = "Lose"
+
+[connection signal="timeout" from="Game Manager/Timer" to="Game Manager" method="_on_timer_timeout"]
+[connection signal="mouse_entered" from="CanvasLayer/Instructions" to="CanvasLayer/Instructions" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer/Instructions" to="CanvasLayer/Instructions" method="_on_mouse_exited"]
+[connection signal="finished" from="Crowd" to="Crowd" method="_on_finished"]

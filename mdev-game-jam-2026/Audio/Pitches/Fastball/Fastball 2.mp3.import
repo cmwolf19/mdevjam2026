@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://tj84jip5nlii"
+path="res://.godot/imported/Fastball 2.mp3-844838058277a68defa3895ff6e0b0f0.mp3str"
+
+[deps]
+
+source_file="res://Audio/Pitches/Fastball/Fastball 2.mp3"
+dest_files=["res://.godot/imported/Fastball 2.mp3-844838058277a68defa3895ff6e0b0f0.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

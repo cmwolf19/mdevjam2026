@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://do7qv8mschori"
+path="res://.godot/imported/Crazy 5.mp3-41d620ffd5a56dc0b9f5bef20d6bab8c.mp3str"
+
+[deps]
+
+source_file="res://Audio/Pitches/Crazy/Crazy 5.mp3"
+dest_files=["res://.godot/imported/Crazy 5.mp3-41d620ffd5a56dc0b9f5bef20d6bab8c.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
