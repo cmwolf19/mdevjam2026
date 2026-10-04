@@ -13,6 +13,7 @@ signal CallOut
 signal CallWin
 signal CallWalk
 signal CallCaught
+signal CallNoBox
 
 signal WiggleBatter(wiggle : bool)
 

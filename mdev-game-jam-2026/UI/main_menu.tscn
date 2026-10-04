@@ -1,23 +1,114 @@
 [gd_scene format=3 uid="uid://p58hfq31mpk5"]
 
+[ext_resource type="Theme" uid="uid://cftg4p6dwgdbg" path="res://UI/scoreboard.tres" id="1_cm0ae"]
 [ext_resource type="Script" uid="uid://0vg2rjvddhuv" path="res://UI/scene_switch_button.gd" id="1_p8ccj"]
 [ext_resource type="Script" uid="uid://dhjt45qm0k7ui" path="res://hand.gd" id="2_d8nwk"]
 [ext_resource type="Texture2D" uid="uid://b8pubcej0hvmr" path="res://Elements/Hand.png" id="3_4cwpn"]
+[ext_resource type="AudioStream" uid="uid://diq224s8anv7r" path="res://Audio/Confirm/Confirm 1.mp3" id="3_yse5n"]
+[ext_resource type="AudioStream" uid="uid://nk0435deef6y" path="res://Audio/Confirm/Confirm 2.mp3" id="4_4yo78"]
+[ext_resource type="FontFile" uid="uid://dp87l5l2lxd1d" path="res://UI/paper-cut/papercut.ttf" id="4_cppxk"]
+[ext_resource type="Shader" uid="uid://cgikpdhxfcqey" path="res://main.gdshader" id="4_f40uw"]
+[ext_resource type="Script" uid="uid://dll6fxuettlsh" path="res://tv.gd" id="5_8ctay"]
+[ext_resource type="AudioStream" uid="uid://boipgimcb8626" path="res://Audio/Confirm/Confirm 3.mp3" id="5_vyejp"]
+[ext_resource type="Script" uid="uid://buefvg66cwrwg" path="res://UI/info_panel.gd" id="5_yrwoe"]
+[ext_resource type="Script" uid="uid://bmcadolmuegtj" path="res://UI/title_call.gd" id="6_63p5o"]
+[ext_resource type="AudioStream" uid="uid://br6tobmq0d3fd" path="res://Audio/Title Drops/Title 1.mp3" id="6_l25lq"]
+[ext_resource type="Texture2D" uid="uid://b1872bkjnk1o0" path="res://UI/info.png" id="6_yse5n"]
+[ext_resource type="AudioStream" uid="uid://4docbam7ro25" path="res://Audio/Title Drops/Title 2.mp3" id="7_n8nh2"]
+[ext_resource type="AudioStream" uid="uid://b1f0fxeijnbmk" path="res://Audio/Title Drops/Title 11.mp3" id="8_cppxk"]
+[ext_resource type="AudioStream" uid="uid://bqck561x2qt3d" path="res://Audio/Title Drops/Title 12.mp3" id="9_cm0ae"]
+[ext_resource type="AudioStream" uid="uid://ci7vr56esw0pq" path="res://Audio/Title Drops/Title 13.mp3" id="10_r17ju"]
+[ext_resource type="AudioStream" uid="uid://cgwwda4j4dqix" path="res://Audio/Title Drops/Title 14.mp3" id="11_b5g3n"]
+[ext_resource type="AudioStream" uid="uid://bk053a4nc08kf" path="res://Audio/Title Drops/Title 15.mp3" id="12_gjyxs"]
+[ext_resource type="AudioStream" uid="uid://cikqu7xurrffi" path="res://Audio/Title Drops/Title 16.mp3" id="13_mb2wu"]
+[ext_resource type="AudioStream" uid="uid://bp57nu7ddure5" path="res://Audio/Title Drops/Title 17.mp3" id="14_5y5om"]
+[ext_resource type="AudioStream" uid="uid://cflotuxmwu3eo" path="res://Audio/Title Drops/Title 18.mp3" id="15_wkj1u"]
+[ext_resource type="AudioStream" uid="uid://dfuwxlioqixht" path="res://Audio/Title Drops/Title 19.mp3" id="16_63p5o"]
+[ext_resource type="AudioStream" uid="uid://sah6mo6tricp" path="res://Audio/Title Drops/Title 20.mp3" id="17_t3a0l"]
+[ext_resource type="AudioStream" uid="uid://b5mhslrig7egr" path="res://Audio/Title Drops/Title 3.mp3" id="18_yrwoe"]
+[ext_resource type="AudioStream" uid="uid://caixxc3q38u6l" path="res://Audio/Title Drops/Title 21.mp3" id="19_yse5n"]
+[ext_resource type="AudioStream" uid="uid://clq3qkc6olil2" path="res://Audio/Title Drops/Title 22.mp3" id="20_4yo78"]
+[ext_resource type="AudioStream" uid="uid://ds1m6b3rmnths" path="res://Audio/Title Drops/Title 4.mp3" id="21_vyejp"]
+[ext_resource type="AudioStream" uid="uid://bju5igwwh3x6r" path="res://Audio/Title Drops/Title 5.mp3" id="22_2vboq"]
+[ext_resource type="AudioStream" uid="uid://dn77rgcjoxfg4" path="res://Audio/Title Drops/Title 6.mp3" id="23_1kc5w"]
+[ext_resource type="AudioStream" uid="uid://d3gxfslvrl7l7" path="res://Audio/Title Drops/Title 7.mp3" id="24_pqlv2"]
+[ext_resource type="AudioStream" uid="uid://c88ex2ovkyew0" path="res://Audio/Title Drops/Title 8.mp3" id="25_0b2ia"]
+[ext_resource type="AudioStream" uid="uid://boksyynkt84nc" path="res://Audio/Title Drops/Title 9.mp3" id="26_an8on"]
+[ext_resource type="AudioStream" uid="uid://c8tecamneev35" path="res://Audio/Title Drops/Title 10.mp3" id="27_ar11p"]
+[ext_resource type="Texture2D" uid="uid://djknpk4dliqol" path="res://Field.png" id="28_n8nh2"]
+[ext_resource type="Script" uid="uid://durf07jmfpldh" path="res://box_drawer.gd" id="33_gjyxs"]
+[ext_resource type="AudioStream" uid="uid://b3dyyl0exey38" path="res://Audio/Main Menu Theme.wav" id="35_wkj1u"]
+[ext_resource type="Script" uid="uid://dwewapc480e8x" path="res://Elements/crowd_audio.gd" id="36_4yo78"]
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_63p5o"]
+streams_count = 3
+stream_0/stream = ExtResource("3_yse5n")
+stream_1/stream = ExtResource("4_4yo78")
+stream_2/stream = ExtResource("5_vyejp")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ev3b6"]
+shader = ExtResource("4_f40uw")
+shader_parameter/brightness = 1.41600006726
+shader_parameter/contrast = 1.08
+shader_parameter/saturation = 1.1
+shader_parameter/gamma = 1.05
+shader_parameter/curvature = 0.0590000028025
+shader_parameter/corner_soften = 0.0
+shader_parameter/vignette = 0.1130000053675
+shader_parameter/scanline_strength = 0.450000021375
+shader_parameter/scanline_density = 1.15
+shader_parameter/interlace_strength = 0.2
+shader_parameter/mask_strength = 1.0
+shader_parameter/mask_scale = 1.0
+shader_parameter/chroma_offset_px = 1.6
+shader_parameter/luma_smear_px = 2.2
+shader_parameter/jitter_px = 0.650000030875
+shader_parameter/wobble_px = 0.0
+shader_parameter/tape_noise = 0.21200001007
+shader_parameter/tape_lines = 0.0
+shader_parameter/roll_speed = 0.1
+shader_parameter/roll_strength = 0.15
+shader_parameter/glow_strength = 2.0
+shader_parameter/glow_threshold = 0.750000035625
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_x1a4p"]
+streams_count = 22
+stream_0/stream = ExtResource("6_l25lq")
+stream_1/stream = ExtResource("7_n8nh2")
+stream_2/stream = ExtResource("18_yrwoe")
+stream_3/stream = ExtResource("21_vyejp")
+stream_4/stream = ExtResource("22_2vboq")
+stream_5/stream = ExtResource("23_1kc5w")
+stream_6/stream = ExtResource("24_pqlv2")
+stream_7/stream = ExtResource("25_0b2ia")
+stream_8/stream = ExtResource("26_an8on")
+stream_9/stream = ExtResource("27_ar11p")
+stream_10/stream = ExtResource("8_cppxk")
+stream_11/stream = ExtResource("9_cm0ae")
+stream_12/stream = ExtResource("10_r17ju")
+stream_13/stream = ExtResource("11_b5g3n")
+stream_14/stream = ExtResource("12_gjyxs")
+stream_15/stream = ExtResource("13_mb2wu")
+stream_16/stream = ExtResource("14_5y5om")
+stream_17/stream = ExtResource("15_wkj1u")
+stream_18/stream = ExtResource("16_63p5o")
+stream_19/stream = ExtResource("17_t3a0l")
+stream_20/stream = ExtResource("19_yse5n")
+stream_21/stream = ExtResource("20_4yo78")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4yo78"]
+bg_color = Color(0, 0, 0, 0.78431374)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
 
 [node name="Main Menu" type="Node2D" unique_id=835644050]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=484949705]
 
-[node name="PlayButton" type="Button" parent="CanvasLayer" unique_id=1748500170]
-offset_left = 272.0
-offset_top = 104.0
-offset_right = 700.0
-offset_bottom = 256.0
-text = "Play"
-script = ExtResource("1_p8ccj")
-scene_id = "uid://dvope0u3df3kg"
-
 [node name="Hand" type="Node2D" parent="CanvasLayer" unique_id=1606871203]
+process_mode = 3
 z_index = 2
 position = Vector2(416, 647)
 script = ExtResource("2_d8nwk")
@@ -25,3 +116,149 @@ script = ExtResource("2_d8nwk")
 [node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/Hand" unique_id=146862547]
 position = Vector2(-34, 74)
 texture = ExtResource("3_4cwpn")
+metadata/_edit_lock_ = true
+metadata/_edit_group_ = true
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer" unique_id=705652101]
+visible = false
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -675.5
+offset_top = 240.0
+offset_right = 675.5
+offset_bottom = 396.0
+grow_horizontal = 2
+theme_override_fonts/normal_font = ExtResource("4_cppxk")
+theme_override_font_sizes/normal_font_size = 96
+bbcode_enabled = true
+text = "[shake]cheating at baseball"
+horizontal_alignment = 1
+script = ExtResource("6_63p5o")
+
+[node name="Info Panel" type="PanelContainer" parent="CanvasLayer" unique_id=1360507369]
+process_mode = 3
+visible = false
+self_modulate = Color(1, 1, 1, 0)
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -110.0
+offset_top = -110.0
+offset_right = -8.0
+offset_bottom = -8.0
+grow_horizontal = 0
+grow_vertical = 0
+offset_transform_enabled = true
+script = ExtResource("5_yrwoe")
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Info Panel" unique_id=212691377]
+layout_mode = 2
+texture = ExtResource("6_yse5n")
+expand_mode = 1
+
+[node name="Play Again" type="Button" parent="CanvasLayer" unique_id=1730805685 node_paths=PackedStringArray("audio")]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -122.75
+offset_top = 103.5
+offset_right = 122.75
+offset_bottom = 168.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_cm0ae")
+text = "Play"
+script = ExtResource("1_p8ccj")
+audio = NodePath("AudioStreamPlayer")
+scene_id = "uid://bg72voxpxkyu5"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="CanvasLayer/Play Again" unique_id=2074132235]
+process_mode = 3
+stream = SubResource("AudioStreamRandomizer_63p5o")
+
+[node name="TV" type="ColorRect" parent="CanvasLayer" unique_id=1305230255]
+material = SubResource("ShaderMaterial_ev3b6")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("5_8ctay")
+
+[node name="Title Call" type="AudioStreamPlayer" parent="." unique_id=378381248]
+stream = SubResource("AudioStreamRandomizer_x1a4p")
+autoplay = true
+bus = &"Announcer"
+
+[node name="BG" type="Sprite2D" parent="." unique_id=1170920540]
+z_index = -99
+position = Vector2(640, 360)
+scale = Vector2(1.2421765, 1.0805556)
+texture = ExtResource("28_n8nh2")
+metadata/_edit_lock_ = true
+
+[node name="Crowd" type="AudioStreamPlayer" parent="." unique_id=1251583214]
+process_mode = 3
+stream = ExtResource("35_wkj1u")
+volume_db = -10.0
+autoplay = true
+max_polyphony = 10
+script = ExtResource("36_4yo78")
+
+[node name="Box Drawer" type="Node2D" parent="." unique_id=1963622713]
+script = ExtResource("33_gjyxs")
+
+[node name="Tutorial" type="CanvasLayer" parent="." unique_id=1719958828]
+process_mode = 3
+visible = false
+
+[node name="Panel" type="Panel" parent="Tutorial" unique_id=2062279766]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -541.10425
+offset_top = -267.5
+offset_right = 541.10425
+offset_bottom = 267.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_4yo78")
+
+[node name="Label" type="RichTextLabel" parent="Tutorial/Panel" unique_id=830771538]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/normal_font_size = 32
+theme_override_font_sizes/bold_font_size = 32
+bbcode_enabled = true
+text = "Draw strike boxes by [b]HOLDING LEFT CLICK[/b] when the pitch is thrown.
+
+Move your strike box by [b]HOLDING RIGHT CLICK[/b] while drawing.
+
+Make sure to catch the pitch! Unless the batter is [color=ffa6a6][shake]READY[/shake][/color]...
+
+If the batter is [color=ffa6a6][shake]READY[/shake][/color], draw a strike box [b]AWAY FROM THE BALL.[/b]
+
+Keep your [b]SUSPICION[/b] low by throwing balls and drawing good boxes.
+
+[wave][b]Try it now!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="mouse_entered" from="CanvasLayer/RichTextLabel" to="CanvasLayer/RichTextLabel" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer/RichTextLabel" to="CanvasLayer/RichTextLabel" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="CanvasLayer/Info Panel" to="CanvasLayer/Info Panel" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer/Info Panel" to="CanvasLayer/Info Panel" method="_on_mouse_exited"]
+[connection signal="finished" from="Crowd" to="Crowd" method="_on_finished"]

@@ -2,9 +2,22 @@
 
 [ext_resource type="Script" uid="uid://ynxswwxouj" path="res://Elements/Ball/ball.gd" id="1_qyvbr"]
 [ext_resource type="Texture2D" uid="uid://rmkc6fykjjvt" path="res://Elements/Ball/baseball.png" id="2_pvr0s"]
+[ext_resource type="AudioStream" uid="uid://bl2y33ola04tn" path="res://Audio/Pitches/Crazy/Crazy 1.mp3" id="3_n7vdg"]
+[ext_resource type="AudioStream" uid="uid://cfjobuossnxpk" path="res://Audio/Pitches/Crazy/Crazy 2.mp3" id="4_qw6yu"]
+[ext_resource type="AudioStream" uid="uid://rsksv6re4j3v" path="res://Audio/Pitches/Crazy/Crazy 3.mp3" id="5_i5y84"]
+[ext_resource type="AudioStream" uid="uid://dm0hmn0f24w2i" path="res://Audio/Pitches/Crazy/Crazy 4.mp3" id="6_4gs4t"]
+[ext_resource type="AudioStream" uid="uid://do7qv8mschori" path="res://Audio/Pitches/Crazy/Crazy 5.mp3" id="7_ufmqe"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_x1a4p"]
 radius = 30.149628
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_pfogc"]
+streams_count = 5
+stream_0/stream = ExtResource("3_n7vdg")
+stream_1/stream = ExtResource("4_qw6yu")
+stream_2/stream = ExtResource("5_i5y84")
+stream_3/stream = ExtResource("6_4gs4t")
+stream_4/stream = ExtResource("7_ufmqe")
 
 [node name="Changeup" type="Node2D" unique_id=536422818]
 script = ExtResource("1_qyvbr")
@@ -29,3 +42,7 @@ scale = Vector2(0.20166665, 0.04852096)
 texture = ExtResource("2_pvr0s")
 centered = false
 offset = Vector2(-150, -150)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1865179100]
+stream = SubResource("AudioStreamRandomizer_pfogc")
+autoplay = true

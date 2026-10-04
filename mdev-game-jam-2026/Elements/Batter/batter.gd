@@ -35,7 +35,6 @@ func Swing():
 
 func SuperSwing():
 	texture = SWING_BATTER
-	
 
 func Call_Strike():
 	if wiggle:
@@ -49,6 +48,10 @@ func Call_Strike():
 func Wiggle(do_wiggle : bool):
 	wiggle = do_wiggle
 	var wiggle_count := 0
+	if wiggle:
+		self_modulate = Color("ffa6a6")
+	else:
+		self_modulate = Color.WHITE
 	while wiggle:
 		match wiggle_count:
 			0: offset += Vector2.UP*8

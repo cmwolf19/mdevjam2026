@@ -43,10 +43,12 @@ func _process(delta: float) -> void:
 	if slide: 
 		global_position += get_global_mouse_position() - slide_origin
 		slide_origin = get_global_mouse_position()
+
 	if !held : return
 	draw_target = get_local_mouse_position()
 	Redraw_Box()
-
+	
+	
 func Lock_Box():
 	held = false 
 	slide = false
@@ -54,27 +56,33 @@ func Lock_Box():
 	var collision_rect := RectangleShape2D.new()
 	collision_rect.size = Vector2i(abs(draw_target.x), abs(draw_target.y))
 	collision_shape_2d.shape = collision_rect
+	area_2d.position = draw_target/2
 	if collision_rect.size.length() < 10 : 
 		queue_free()
 		return
-	area_2d.position = draw_target/2
+	if Pitch.current_pitch == null: 
+		area_2d.monitorable = true
+		area_2d.monitoring = true
+		return
 	var size_sus := 0
 	var x_sus := 0
 	var y_sus := 0
-	var pitch_sus := -1
+	var dim_sus := 0
+	var pitch_sus := 0
 	if abs(collision_rect.size.x-collision_rect.size.y) > 30 : 
 		size_sus = int(abs(collision_rect.size.x-collision_rect.size.y) / 30)
 	if collision_rect.size.x > 172 || collision_rect.size.y > 172 : 
 		x_sus = int(collision_rect.size.x / 172)
 		y_sus = int(collision_rect.size.y / 172)
+		dim_sus = max(x_sus, y_sus)
 	
 	var pitch_distance = abs(area_2d.global_position.distance_to(Pitch.current_pitch.global_position))
-	if pitch_distance > 100 : pitch_sus += 1
+	if pitch_distance > 50 : pitch_sus += 1
+	if pitch_distance > 150 : pitch_sus += 1
 	if pitch_distance > 300 : pitch_sus += 1
-	if pitch_distance > 500 : pitch_sus += 1
 	
-	var final_sus = size_sus + x_sus + y_sus + pitch_sus
-	final_sus = min(final_sus, 5)
+	var final_sus = size_sus + dim_sus + pitch_sus
+	final_sus = min(final_sus, 4)
 	final_sus = max(final_sus, 0)
 	suspicion += final_sus
 	
@@ -88,7 +96,7 @@ func Redraw_Box():
 
 func on_caught_ball():
 	caught_ball = true
-	modulate = sus_gradient.gradient.sample(suspicion / 5.0)
+	modulate = sus_gradient.gradient.sample(suspicion / 4.0)
 	await get_tree().create_timer(1).timeout
 	var tween = create_tween()
 	tween.tween_property(self, "modulate", Color(0, 1, 0, 0), 1)

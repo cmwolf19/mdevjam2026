@@ -15,3 +15,10 @@ func Fizz_Out():
 
 func Set_Fizz(fizz : float):
 	shader_mat.set_shader_parameter("jitter_px", fizz)
+
+func _input(event: InputEvent) -> void:
+	if event is InputEventMouseButton and event.is_pressed():
+		Input.mouse_mode = Input.MOUSE_MODE_CONFINED_HIDDEN
+	
+	if event.is_action_pressed("escape"):
+		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE

@@ -5,8 +5,8 @@
 
 [node name="Scene Switcher" type="Node" unique_id=258836676]
 script = ExtResource("1_tar1s")
-transition_duration = 2.0
-progress_end = 2.0
+transition_duration = 1.0
+progress_end = 3.5
 
 [node name="Transition Layer" type="CanvasLayer" parent="." unique_id=1020153056]
 layer = 100
@@ -19,4 +19,3 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-color = Color(0, 0, 0, 1)

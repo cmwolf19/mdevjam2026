@@ -2,9 +2,22 @@
 
 [ext_resource type="Script" uid="uid://ynxswwxouj" path="res://Elements/Ball/ball.gd" id="1_vdu0q"]
 [ext_resource type="Texture2D" uid="uid://rmkc6fykjjvt" path="res://Elements/Ball/baseball.png" id="2_0xwg5"]
+[ext_resource type="AudioStream" uid="uid://c757w1dvxldk7" path="res://Audio/Pitches/Sinker/Sinker 1.mp3" id="3_oouxd"]
+[ext_resource type="AudioStream" uid="uid://bxv8gow20l4wf" path="res://Audio/Pitches/Sinker/Sinker 2.mp3" id="4_nd0aa"]
+[ext_resource type="AudioStream" uid="uid://r414v6acpxge" path="res://Audio/Pitches/Sinker/Sinker 3.mp3" id="5_3j2a4"]
+[ext_resource type="AudioStream" uid="uid://dtlpak8cttys8" path="res://Audio/Pitches/Sinker/Sinker 4.mp3" id="6_hjmmy"]
+[ext_resource type="AudioStream" uid="uid://bno0nue1vr25k" path="res://Audio/Pitches/Sinker/Sinker 5.mp3" id="7_vk2ra"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_x1a4p"]
 radius = 30.149628
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_bygdt"]
+streams_count = 5
+stream_0/stream = ExtResource("3_oouxd")
+stream_1/stream = ExtResource("4_nd0aa")
+stream_2/stream = ExtResource("5_3j2a4")
+stream_3/stream = ExtResource("6_hjmmy")
+stream_4/stream = ExtResource("7_vk2ra")
 
 [node name="Sinker" type="Node2D" unique_id=536422818]
 script = ExtResource("1_vdu0q")
@@ -29,3 +42,7 @@ collision_layer = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=318974472]
 shape = SubResource("CircleShape2D_x1a4p")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=28092300]
+stream = SubResource("AudioStreamRandomizer_bygdt")
+autoplay = true

@@ -19,14 +19,19 @@
 [ext_resource type="Script" uid="uid://dhjt45qm0k7ui" path="res://hand.gd" id="17_lnxka"]
 [ext_resource type="Texture2D" uid="uid://b8pubcej0hvmr" path="res://Elements/Hand.png" id="18_6ydj6"]
 [ext_resource type="Shader" uid="uid://cgikpdhxfcqey" path="res://main.gdshader" id="19_1qd6q"]
+[ext_resource type="Texture2D" uid="uid://b1872bkjnk1o0" path="res://UI/info.png" id="19_38p41"]
+[ext_resource type="Script" uid="uid://buefvg66cwrwg" path="res://UI/info_panel.gd" id="19_yaacw"]
 [ext_resource type="Script" uid="uid://dll6fxuettlsh" path="res://tv.gd" id="20_pbp7t"]
 [ext_resource type="Script" uid="uid://csd14ud1oas3e" path="res://UI/game_over_panel.gd" id="21_tty2h"]
 [ext_resource type="Texture2D" uid="uid://djknpk4dliqol" path="res://Field.png" id="22_0drel"]
 [ext_resource type="Script" uid="uid://0vg2rjvddhuv" path="res://UI/scene_switch_button.gd" id="22_n2qw3"]
 [ext_resource type="Script" uid="uid://cnpdy5litlfsh" path="res://Elements/angry_fans.gd" id="23_ypam1"]
 [ext_resource type="Texture2D" uid="uid://dtpa4so0scp4p" path="res://UI/angry fan.png" id="24_l15yv"]
+[ext_resource type="AudioStream" uid="uid://diq224s8anv7r" path="res://Audio/Confirm/Confirm 1.mp3" id="25_sobwn"]
 [ext_resource type="Script" uid="uid://dcnnslnjlmcbv" path="res://Elements/fan.gd" id="25_x7q3p"]
+[ext_resource type="AudioStream" uid="uid://nk0435deef6y" path="res://Audio/Confirm/Confirm 2.mp3" id="26_a031p"]
 [ext_resource type="Texture2D" uid="uid://b4bq4rq001bky" path="res://UI/angry fan 2.png" id="26_ve70b"]
+[ext_resource type="AudioStream" uid="uid://boipgimcb8626" path="res://Audio/Confirm/Confirm 3.mp3" id="27_62c7y"]
 [ext_resource type="Texture2D" uid="uid://d2yln5anatiws" path="res://UI/angry fan 3.png" id="27_dg8ux"]
 [ext_resource type="AudioStream" uid="uid://lv61bf38wkj5" path="res://Audio/Blips/Blip 1.mp3" id="28_au2ce"]
 [ext_resource type="AudioStream" uid="uid://cfidhmcr8ut3y" path="res://Audio/Blips/Blip 2.mp3" id="29_vlm7v"]
@@ -179,6 +184,16 @@
 [ext_resource type="AudioStream" uid="uid://dj232ys25xkra" path="res://Audio/Crowd Noise/Crowd 6.wav" id="176_x07mb"]
 [ext_resource type="Script" uid="uid://dwewapc480e8x" path="res://Elements/crowd_audio.gd" id="177_jbuo8"]
 [ext_resource type="AudioStream" uid="uid://dorgm07alggm6" path="res://Audio/Game Over.mp3" id="179_ocfsu"]
+[ext_resource type="AudioStream" uid="uid://cerylj2lr6eca" path="res://Audio/Good Ending.mp3" id="180_vyctn"]
+[ext_resource type="AudioStream" uid="uid://dl8gu3cnatiyj" path="res://Audio/Walk-Off.mp3" id="181_pongv"]
+[ext_resource type="Script" uid="uid://b52bptdsnbkpl" path="res://tutorial_panel.gd" id="182_3tlt0"]
+[ext_resource type="AudioStream" uid="uid://bvp3ygg8yacws" path="res://Audio/READY Batter.wav" id="187_a031p"]
+[ext_resource type="AudioStream" uid="uid://b5b5txlvpkvuo" path="res://Audio/Cheatsheet/Paper 1.mp3" id="188_lnxka"]
+[ext_resource type="AudioStream" uid="uid://dcfjaviuybpyi" path="res://Audio/Cheatsheet/Paper 2.mp3" id="189_6ydj6"]
+[ext_resource type="AudioStream" uid="uid://bk57jqt4lpckr" path="res://Audio/Cheatsheet/Paper 3.mp3" id="190_1qd6q"]
+[ext_resource type="AudioStream" uid="uid://be3wp4jsbxtot" path="res://Audio/Cheatsheet/Paper 4.mp3" id="191_pbp7t"]
+[ext_resource type="AudioStream" uid="uid://3u3cruwpmli4" path="res://Audio/Cheatsheet/Paper 5.mp3" id="192_tty2h"]
+[ext_resource type="Texture2D" uid="uid://dv5astajkytka" path="res://UI/dollar.png" id="194_6ydj6"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_x1a4p"]
 shader = ExtResource("19_1qd6q")
@@ -204,6 +219,32 @@ shader_parameter/roll_speed = 0.1
 shader_parameter/roll_strength = 0.15
 shader_parameter/glow_strength = 2.0
 shader_parameter/glow_threshold = 0.750000035625
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x1a4p"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 4
+shadow_offset = Vector2(4, 4)
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_8t27g"]
+streams_count = 3
+stream_0/stream = ExtResource("25_sobwn")
+stream_1/stream = ExtResource("26_a031p")
+stream_2/stream = ExtResource("27_62c7y")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_x1a4p"]
+particle_flag_disable_z = true
+emission_shape_offset = Vector3(0, -200, 0)
+emission_shape = 3
+emission_box_extents = Vector3(720, 1, 1)
+angle_min = -295.4
+angle_max = 1.0728835e-05
+gravity = Vector3(0, 98, 0)
+scale_min = 0.099999994
+scale_max = 0.099999994
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_g3y5b"]
 streams_count = 8
@@ -388,6 +429,29 @@ stream_2/stream = ExtResource("174_u3kp2")
 stream_3/stream = ExtResource("175_kdfni")
 stream_4/stream = ExtResource("176_x07mb")
 
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_a031p"]
+streams_count = 5
+stream_0/stream = ExtResource("188_lnxka")
+stream_1/stream = ExtResource("189_6ydj6")
+stream_2/stream = ExtResource("190_1qd6q")
+stream_3/stream = ExtResource("191_pbp7t")
+stream_4/stream = ExtResource("192_tty2h")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pongv"]
+draw_center = false
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0, 0, 0.8, 0.23921569)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3tlt0"]
+bg_color = Color(0, 0, 0, 0.78431374)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
 [node name="Baseball Game" type="Node2D" unique_id=1651536846]
 
 [node name="Game Manager" type="Node" parent="." unique_id=345914391]
@@ -414,6 +478,7 @@ script = ExtResource("5_pongv")
 
 [node name="Box Drawer" type="Node2D" parent="." unique_id=1806426225]
 script = ExtResource("6_3tlt0")
+require_pitch = true
 
 [node name="Ball Thrower" type="Node2D" parent="." unique_id=1883267432]
 position = Vector2(636, 412)
@@ -530,7 +595,7 @@ unique_name_in_owner = true
 custom_minimum_size = Vector2(512, 32)
 layout_mode = 2
 theme = ExtResource("13_62c7y")
-max_value = 10.0
+max_value = 5.0
 show_percentage = false
 
 [node name="Label" type="Label" parent="CanvasLayer/Callout Box/MarginContainer/SuspicionDisplay" unique_id=1555074194]
@@ -555,19 +620,21 @@ text = "IT'S A STRIKE!"
 visible_characters_behavior = 1
 
 [node name="Instructions" type="TextureRect" parent="CanvasLayer" unique_id=396856840]
+process_mode = 3
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
 offset_left = -88.0
-offset_top = -97.0
+offset_top = -76.0
 offset_right = 379.0
-offset_bottom = 376.0
+offset_bottom = 397.0
 grow_vertical = 0
 mouse_filter = 0
 texture = ExtResource("15_coxvs")
 script = ExtResource("16_ey6md")
 
 [node name="Hand" type="Node2D" parent="CanvasLayer" unique_id=620027000]
+process_mode = 3
 z_index = 2
 position = Vector2(416, 647)
 script = ExtResource("17_lnxka")
@@ -576,8 +643,29 @@ script = ExtResource("17_lnxka")
 position = Vector2(-34, 74)
 texture = ExtResource("18_6ydj6")
 
+[node name="Info Panel" type="PanelContainer" parent="CanvasLayer" unique_id=951602490]
+process_mode = 3
+self_modulate = Color(1, 1, 1, 0)
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -110.0
+offset_top = -110.0
+offset_right = -8.0
+offset_bottom = -8.0
+grow_horizontal = 0
+grow_vertical = 0
+offset_transform_enabled = true
+script = ExtResource("19_yaacw")
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Info Panel" unique_id=1117518025]
+layout_mode = 2
+texture = ExtResource("19_38p41")
+expand_mode = 1
+
 [node name="TV" type="ColorRect" parent="CanvasLayer" unique_id=1967314951]
-visible = false
 material = SubResource("ShaderMaterial_x1a4p")
 anchors_preset = 15
 anchor_right = 1.0
@@ -631,28 +719,110 @@ text = "batter hit a homer."
 horizontal_alignment = 1
 uppercase = true
 
-[node name="MenuButton" type="Button" parent="CanvasLayer" unique_id=471085788]
+[node name="Lose Options" type="Control" parent="CanvasLayer" unique_id=159381830]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 441.0
+offset_top = 431.5
+offset_right = 839.0
+offset_bottom = 496.5
+
+[node name="HintPanel" type="PanelContainer" parent="CanvasLayer/Lose Options" unique_id=2133837754]
+unique_name_in_owner = true
+layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -122.75
-offset_top = 119.5
-offset_right = 122.75
-offset_bottom = 184.5
+offset_left = -199.0
+offset_top = -32.5
+offset_right = 199.0
+offset_bottom = 32.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_x1a4p")
+metadata/_edit_group_ = true
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/Lose Options/HintPanel" unique_id=740982294]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="Hint Label" type="RichTextLabel" parent="CanvasLayer/Lose Options/HintPanel/MarginContainer" unique_id=642647646]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+bbcode_enabled = true
+text = "When the batter is [shake]READY[/shake], 
+draw a strike box that DOESN'T CATCH THE BALL."
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Play Again" type="Button" parent="CanvasLayer/Lose Options" unique_id=466974189 node_paths=PackedStringArray("audio")]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -282.75
+offset_top = 70.0
+offset_right = -37.25
+offset_bottom = 135.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("13_62c7y")
+text = "Play Again"
+script = ExtResource("22_n2qw3")
+audio = NodePath("AudioStreamPlayer")
+scene_id = "uid://bg72voxpxkyu5"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="CanvasLayer/Lose Options/Play Again" unique_id=446533545]
+process_mode = 3
+stream = SubResource("AudioStreamRandomizer_8t27g")
+
+[node name="MenuButton" type="Button" parent="CanvasLayer/Lose Options" unique_id=471085788 node_paths=PackedStringArray("audio")]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 37.25
+offset_top = 70.0
+offset_right = 282.75
+offset_bottom = 135.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("13_62c7y")
 text = "Main Menu"
 script = ExtResource("22_n2qw3")
+audio = NodePath("AudioStreamPlayer")
 scene_id = "uid://p58hfq31mpk5"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="CanvasLayer/Lose Options/MenuButton" unique_id=781385685]
+process_mode = 3
+stream = SubResource("AudioStreamRandomizer_8t27g")
+
+[node name="Money" type="GPUParticles2D" parent="CanvasLayer" unique_id=2007163125]
+top_level = true
+position = Vector2(671, 103)
+emitting = false
+amount = 32
+texture = ExtResource("194_6ydj6")
+lifetime = 4.5
+process_material = SubResource("ParticleProcessMaterial_x1a4p")
 
 [node name="BG" type="Sprite2D" parent="." unique_id=487751033]
 z_index = -99
 position = Vector2(640, 360)
 scale = Vector2(1.2421765, 1.0805556)
 texture = ExtResource("22_0drel")
+metadata/_edit_lock_ = true
 
 [node name="Fans" type="Node2D" parent="." unique_id=1880846682]
 position = Vector2(1400, 289)
@@ -679,53 +849,62 @@ texture = ExtResource("27_dg8ux")
 script = ExtResource("25_x7q3p")
 
 [node name="Chirp" type="AudioStreamPlayer" parent="." unique_id=1121514280]
+process_mode = 3
 stream = SubResource("AudioStreamRandomizer_g3y5b")
 script = ExtResource("36_7opui")
 key = "Chirp"
 
 [node name="StrikeAudio1" type="AudioStreamPlayer" parent="." unique_id=301411090]
+process_mode = 3
 stream = SubResource("AudioStreamRandomizer_dg77c")
 bus = &"Announcer"
 script = ExtResource("36_7opui")
 key = "Strike1"
 
 [node name="StrikeAudio2" type="AudioStreamPlayer" parent="." unique_id=2042585432]
+process_mode = 3
 stream = SubResource("AudioStreamRandomizer_ycdy4")
 bus = &"Announcer"
 script = ExtResource("36_7opui")
 key = "Strike2"
 
 [node name="StrikeAudio3" type="AudioStreamPlayer" parent="." unique_id=1054532383]
+process_mode = 3
 stream = SubResource("AudioStreamRandomizer_w48qg")
 bus = &"Announcer"
 script = ExtResource("36_7opui")
 key = "Strike3"
 
 [node name="BallAudio1" type="AudioStreamPlayer" parent="." unique_id=847099213]
+process_mode = 3
 stream = SubResource("AudioStreamRandomizer_vivmo")
 bus = &"Announcer"
 script = ExtResource("36_7opui")
 key = "Ball1"
 
 [node name="BallAudio2" type="AudioStreamPlayer" parent="." unique_id=857365899]
+process_mode = 3
 stream = SubResource("AudioStreamRandomizer_2cqfq")
 bus = &"Announcer"
 script = ExtResource("36_7opui")
 key = "Ball2"
 
 [node name="BallAudio3" type="AudioStreamPlayer" parent="." unique_id=660768398]
+process_mode = 3
 stream = SubResource("AudioStreamRandomizer_yaehf")
 bus = &"Announcer"
 script = ExtResource("36_7opui")
 key = "Ball3"
 
 [node name="BallAudio4" type="AudioStreamPlayer" parent="." unique_id=697098357]
+process_mode = 3
 stream = SubResource("AudioStreamRandomizer_074og")
 bus = &"Announcer"
 script = ExtResource("36_7opui")
 key = "Ball4"
 
 [node name="Suspision" type="AudioStreamPlayer" parent="." unique_id=1696786302]
+process_mode = 3
 stream = SubResource("AudioStreamRandomizer_x1a4p")
 volume_db = -8.0
 bus = &"Fans"
@@ -733,19 +912,20 @@ script = ExtResource("36_7opui")
 key = "Sus"
 
 [node name="Catch" type="AudioStreamPlayer" parent="." unique_id=991524929]
+process_mode = 3
 stream = SubResource("AudioStreamRandomizer_6gr3f")
-volume_db = -8.0
 script = ExtResource("36_7opui")
 key = "Catch"
 
 [node name="Hit" type="AudioStreamPlayer" parent="." unique_id=268495674]
+process_mode = 3
 stream = ExtResource("159_caaio")
-volume_db = -8.0
 bus = &"Hit"
 script = ExtResource("36_7opui")
 key = "Hit"
 
 [node name="Cheating" type="AudioStreamPlayer" parent="." unique_id=692079976]
+process_mode = 3
 stream = SubResource("AudioStreamRandomizer_nycv6")
 volume_db = -8.0
 bus = &"Announcer"
@@ -753,18 +933,98 @@ script = ExtResource("36_7opui")
 key = "Cheating"
 
 [node name="Crowd" type="AudioStreamPlayer" parent="." unique_id=960826803]
+process_mode = 3
 stream = SubResource("AudioStreamRandomizer_qflyo")
-volume_db = -15.0
+volume_db = -10.0
 autoplay = true
 script = ExtResource("177_jbuo8")
 
 [node name="Loss" type="AudioStreamPlayer" parent="." unique_id=541423494]
+process_mode = 3
 stream = ExtResource("179_ocfsu")
 volume_db = -10.0
 script = ExtResource("36_7opui")
 key = "Lose"
 
+[node name="Win" type="AudioStreamPlayer" parent="." unique_id=1745731785]
+process_mode = 3
+stream = ExtResource("180_vyctn")
+volume_db = -5.0
+script = ExtResource("36_7opui")
+key = "Win"
+
+[node name="Walk" type="AudioStreamPlayer" parent="." unique_id=980156013]
+process_mode = 3
+stream = ExtResource("181_pongv")
+volume_db = -10.0
+script = ExtResource("36_7opui")
+key = "Walk"
+
+[node name="Ready" type="AudioStreamPlayer" parent="." unique_id=238235709]
+process_mode = 3
+stream = ExtResource("187_a031p")
+volume_db = -10.0
+script = ExtResource("36_7opui")
+key = "Batter"
+
+[node name="Paper" type="AudioStreamPlayer" parent="." unique_id=1270713254]
+process_mode = 3
+stream = SubResource("AudioStreamRandomizer_a031p")
+volume_db = -10.0
+script = ExtResource("36_7opui")
+key = "Paper"
+
+[node name="Real Strikebox" type="Panel" parent="." unique_id=1525871058]
+offset_left = 570.0
+offset_top = 418.0
+offset_right = 705.0
+offset_bottom = 553.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_pongv")
+script = ExtResource("182_3tlt0")
+
+[node name="Tutorial" type="CanvasLayer" parent="." unique_id=695959261]
+process_mode = 3
+visible = false
+
+[node name="Panel" type="Panel" parent="Tutorial" unique_id=245616659]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -541.10425
+offset_top = -220.75
+offset_right = 541.10425
+offset_bottom = 220.75
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_3tlt0")
+
+[node name="Label" type="RichTextLabel" parent="Tutorial/Panel" unique_id=1494604076]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/normal_font_size = 32
+theme_override_font_sizes/bold_font_size = 32
+bbcode_enabled = true
+text = "Draw strike boxes by [b]HOLDING LEFT CLICK[/b] when the pitch is thrown.
+
+Move your strike box by [b]HOLDING RIGHT CLICK[/b] while drawing.
+
+Make sure to catch the pitch! Unless the batter is [color=ffa6a6][shake]READY[/shake][/color]...
+
+If the batter is [color=ffa6a6][shake]READY[/shake][/color], draw a strike box [b]AWAY FROM THE BALL.[/b]
+
+Keep your [b]SUSPICION[/b] low by throwing balls and drawing good boxes."
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [connection signal="timeout" from="Game Manager/Timer" to="Game Manager" method="_on_timer_timeout"]
 [connection signal="mouse_entered" from="CanvasLayer/Instructions" to="CanvasLayer/Instructions" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="CanvasLayer/Instructions" to="CanvasLayer/Instructions" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="CanvasLayer/Info Panel" to="CanvasLayer/Info Panel" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer/Info Panel" to="CanvasLayer/Info Panel" method="_on_mouse_exited"]
 [connection signal="finished" from="Crowd" to="Crowd" method="_on_finished"]

@@ -3,13 +3,15 @@ class_name BoxDrawer
 const STRIKE_BOX = preload("uid://c0x8fn028ngl6")
 
 signal spawn_box(box : StrikeBox)
-@onready var game_manager: Node = $"../Game Manager"
+
+@export var require_pitch : bool
 
 #Click and Drag
 func _input(event: InputEvent) -> void:
-	if game_manager.live_ball == false : return
+	if "live_ball" in owner && owner.live_ball == false : return
 	if event is not InputEventMouseButton : return
 	
+	if require_pitch && Pitch.current_pitch == null : return
 	if event.is_action_pressed("left_click"):
 		spawn_strike_box()
 

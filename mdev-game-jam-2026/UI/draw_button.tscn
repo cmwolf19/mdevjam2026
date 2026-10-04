@@ -1,0 +1,61 @@
+[gd_scene format=3 uid="uid://diqwrwu48pnaw"]
+
+[ext_resource type="Script" uid="uid://5jmta1tjb5w0" path="res://UI/draw_button.gd" id="1_tgyx6"]
+[ext_resource type="Theme" uid="uid://cftg4p6dwgdbg" path="res://UI/scoreboard.tres" id="2_2cmjw"]
+[ext_resource type="Script" uid="uid://bapqrvjqimue1" path="res://UI/toggle_area.gd" id="3_2cmjw"]
+[ext_resource type="AudioStream" uid="uid://diq224s8anv7r" path="res://Audio/Confirm/Confirm 1.mp3" id="4_22xw5"]
+[ext_resource type="AudioStream" uid="uid://nk0435deef6y" path="res://Audio/Confirm/Confirm 2.mp3" id="5_tb573"]
+[ext_resource type="AudioStream" uid="uid://boipgimcb8626" path="res://Audio/Confirm/Confirm 3.mp3" id="6_o5m3g"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3x46x"]
+radius = 5.0
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_2cmjw"]
+streams_count = 3
+stream_0/stream = ExtResource("4_22xw5")
+stream_1/stream = ExtResource("5_tb573")
+stream_2/stream = ExtResource("6_o5m3g")
+
+[node name="Draw Button" type="Node2D" unique_id=540359284]
+z_index = 2
+script = ExtResource("1_tgyx6")
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=518136519]
+offset_right = 245.0
+offset_bottom = 65.0
+theme = ExtResource("2_2cmjw")
+
+[node name="Label" type="Label" parent="PanelContainer" unique_id=676455115]
+layout_mode = 2
+text = " PLAY BALL "
+
+[node name="Top Left" type="Area2D" parent="." unique_id=142365120]
+script = ExtResource("3_2cmjw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Top Left" unique_id=171316378]
+shape = SubResource("CircleShape2D_3x46x")
+
+[node name="Top Right" type="Area2D" parent="." unique_id=697389239]
+position = Vector2(244, 0)
+script = ExtResource("3_2cmjw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Top Right" unique_id=1612029940]
+shape = SubResource("CircleShape2D_3x46x")
+
+[node name="Bottom Right" type="Area2D" parent="." unique_id=1599114957]
+position = Vector2(244, 63)
+script = ExtResource("3_2cmjw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bottom Right" unique_id=464031868]
+shape = SubResource("CircleShape2D_3x46x")
+
+[node name="Bottom Left" type="Area2D" parent="." unique_id=1426258960]
+position = Vector2(1, 62)
+script = ExtResource("3_2cmjw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bottom Left" unique_id=911826613]
+shape = SubResource("CircleShape2D_3x46x")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=395588916]
+process_mode = 3
+stream = SubResource("AudioStreamRandomizer_2cmjw")

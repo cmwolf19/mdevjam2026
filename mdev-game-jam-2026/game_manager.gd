@@ -12,6 +12,9 @@ class_name GameManager
 @onready var suspicion_display: VBoxContainer = %SuspicionDisplay
 @onready var text_display: VBoxContainer = %TextDisplay
 @onready var flash: ColorRect = $"../CanvasLayer/Flash"
+@onready var hint_label: RichTextLabel = %"Hint Label"
+
+var game_over : bool = false
 
 static var outs := 0
 var strikes := 0
@@ -53,15 +56,23 @@ var ball_lines = [
 	"And a ball..."
 ]
 
+var ball_handled : bool
+@onready var tv: ColorRect = $"../CanvasLayer/TV"
+
 func _ready() -> void:
 	Cue_Text()
 	box_drawer.spawn_box.connect(Add_Box)
 	Global.CaughtBall.connect(Caught_Ball)
 	Global.BallStop.connect(Missed_Ball)
 
-func _input(event: InputEvent) -> void:
-	if event.is_action_pressed("debug"):
-		Global.CallOut.emit()
+	Global.CallWin.connect(End_Game)
+	Global.CallWalk.connect(End_Game)
+	Global.CallHit.connect(End_Game)
+	Global.CallCaught.connect(End_Game)
+
+#func _input(event: InputEvent) -> void:
+	#if event.is_action_pressed("debug"):
+		#outs += 1
 
 func Add_Box(new_box : StrikeBox):
 	live_boxes.append(new_box)
@@ -96,6 +107,9 @@ func Cue_Text():
 	text_display.show()
 
 func Caught_Ball():
+	if ball_handled : return
+	ball_handled = true
+		
 	Global.CueSFX.emit("Catch")
 	
 	if !batter_ready : Add_Suspicion()
@@ -104,6 +118,8 @@ func Caught_Ball():
 func Missed_Ball():
 	await get_tree().process_frame
 	await get_tree().process_frame
+	if ball_handled : return
+	ball_handled = true
 	if caught : 
 		caught = false
 		return
@@ -118,14 +134,30 @@ func Add_Suspicion():
 	live_ball = false
 	caught = true
 	var old_sus : int = suspicion
-	for box in live_boxes:
-		if box == null : 
+	if !batter_ready:
+		for box in live_boxes:
+			if box == null : 
+				live_boxes.erase(box)
+				continue
+			suspicion += box.suspicion
 			live_boxes.erase(box)
-			continue
-		suspicion += box.suspicion
-		live_boxes.erase(box)
-	suspicion = max(suspicion, 0)
-	if suspicion >= 10:
+		suspicion = max(suspicion, 0)
+	
+	if suspicion-old_sus > 1:
+		Tween_Line(result_label, Get_Line(sus_strike_lines))
+		Global.CueSFX.emit("Sus")
+	else:
+		Tween_Line(result_label, Get_Line(good_strike_lines))
+	
+	strikes += 1
+	await get_tree().create_timer(0.2).timeout
+	Global.CueSFX.emit("Strike"+str(strikes))
+	
+	Update_Scoreboard()
+	await get_tree().create_timer(2).timeout
+	await Show_Suspicion()
+	if suspicion >= 5:
+		Cue_Text()
 		Tween_Line(pitch_call_label, "Wait a minute! That umpire is...")
 		await get_tree().create_timer(2).timeout
 		Tween_Line(result_label, "CHEATING AT BASEBALL!")
@@ -133,36 +165,25 @@ func Add_Suspicion():
 		timer.stop()
 		Global.CallCaught.emit()
 		return
-	
-	if suspicion-old_sus > 2:
-		Tween_Line(result_label, Get_Line(sus_strike_lines))
-		Global.CueSFX.emit("Sus")
-	else:
-		Tween_Line(result_label, Get_Line(good_strike_lines))
-	
-	strikes += 1
-	Global.CueSFX.emit("Strike"+str(strikes))
-	
-	Update_Scoreboard()
-	await get_tree().create_timer(2).timeout
-	await Show_Suspicion()
 	timer.start()
 	live_boxes.clear()
 
 func Call_Ball():
 	Tween_Line(result_label, Get_Line(ball_lines))
 	balls += 1
+	await get_tree().create_timer(0.2).timeout
 	Global.CueSFX.emit("Ball"+str(balls))
 	Global.CallBall.emit()
 	Update_Scoreboard()
 	live_ball = false
 	live_boxes.clear()
-	suspicion -= balls
+	suspicion -= 1
 	await get_tree().create_timer(2).timeout
 	await Show_Suspicion()
 	timer.start()
 	
 func Throw_Ball():
+	ball_handled = false
 	live_ball = true
 	caught = false
 	ball_thrower.Throw_Ball()
@@ -188,26 +209,32 @@ func Update_Scoreboard():
 	if balls == 4:
 		Tween_Line(pitch_call_label, "A tragic walk, folks...")
 		timer.stop()
+		Global.CueSFX.emit("Walk")
 		Global.CallWalk.emit()
 		return
 	
 	await get_tree().create_timer(1).timeout
 	
 	if batter_ready == false : 
-		batter_ready = (randi_range(0,3) >= 1)
+		batter_ready = (randi_range(0,3) >= 3)
 	else:
 		batter_ready = false
 	Global.WiggleBatter.emit(batter_ready)
+	if batter_ready:
+		Global.CueSFX.emit("Batter")
 
 func Batter_Hit():
+	tv.hide()
 	flash.show()
 	Global.CueSFX.emit("Hit")
 	Global.CallHit.emit()
+	if !batter_ready : Global.CallNoBox.emit()
 	caught = true
 	timer.stop()
 	Pitch.current_pitch.hit = true
 	await get_tree().create_timer(0.1).timeout
 	flash.hide()
+	tv.show()
 	Tween_Line(pitch_call_label, "Oh! It's outta here!")
 	var pos_tween = create_tween()
 	pos_tween.set_ease(Tween.EASE_OUT)
@@ -226,7 +253,12 @@ func Show_Suspicion():
 	tween.tween_property(suspicion_meter, "value", suspicion, 1)
 	await get_tree().create_timer(2).timeout
 
+func End_Game():
+	game_over = true
+	outs = 0
+
 func _on_timer_timeout() -> void:
+	if game_over : return
 	Cue_Text()
 	Tween_Line(pitch_call_label, Get_Line(pitch_lines)) 
 	await get_tree().create_timer(2).timeout

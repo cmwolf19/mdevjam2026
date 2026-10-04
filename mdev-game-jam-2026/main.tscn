@@ -3,7 +3,6 @@
 [ext_resource type="Script" uid="uid://qyvjeus1jf7j" path="res://main.gd" id="1_lquwl"]
 [ext_resource type="PackedScene" uid="uid://b7lbk6ckdmdpb" path="res://Modules/Scene Switcher/scene_switcher.tscn" id="3_1bvp3"]
 [ext_resource type="PackedScene" uid="uid://p58hfq31mpk5" path="res://UI/main_menu.tscn" id="3_h2yge"]
-[ext_resource type="Script" uid="uid://87ehvqd8el2u" path="res://fps.gd" id="4_1bvp3"]
 
 [node name="Main" type="Node2D" unique_id=155545350]
 script = ExtResource("1_lquwl")
@@ -14,15 +13,3 @@ scene_holder = NodePath("../Scene Holder")
 [node name="Scene Holder" type="Node2D" parent="." unique_id=320408935]
 
 [node name="Main Menu" parent="Scene Holder" unique_id=835644050 instance=ExtResource("3_h2yge")]
-
-[node name="Panel" type="Panel" parent="." unique_id=1868225592]
-offset_left = 71.0
-offset_top = 417.0
-offset_right = 342.0
-offset_bottom = 479.0
-
-[node name="Label" type="Label" parent="Panel" unique_id=1538439326]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
-script = ExtResource("4_1bvp3")

@@ -2,9 +2,22 @@
 
 [ext_resource type="Script" uid="uid://ynxswwxouj" path="res://Elements/Ball/ball.gd" id="1_3843v"]
 [ext_resource type="Texture2D" uid="uid://rmkc6fykjjvt" path="res://Elements/Ball/baseball.png" id="2_jqi6q"]
+[ext_resource type="AudioStream" uid="uid://ck1w0adqcwgco" path="res://Audio/Pitches/Curveball/Curveball 1.mp3" id="3_t7pmc"]
+[ext_resource type="AudioStream" uid="uid://54n0eesvty4b" path="res://Audio/Pitches/Curveball/Curveball 2.mp3" id="4_1imko"]
+[ext_resource type="AudioStream" uid="uid://btr6ofpfs71uc" path="res://Audio/Pitches/Curveball/Curveball 3.mp3" id="5_l77yw"]
+[ext_resource type="AudioStream" uid="uid://c7xndn8cxovkm" path="res://Audio/Pitches/Curveball/Curveball 4.mp3" id="6_oinpo"]
+[ext_resource type="AudioStream" uid="uid://d2yjiulhuo2vj" path="res://Audio/Pitches/Curveball/Curveball 5.mp3" id="7_wvkic"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_x1a4p"]
 radius = 30.149628
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_x1a4p"]
+streams_count = 5
+stream_0/stream = ExtResource("3_t7pmc")
+stream_1/stream = ExtResource("4_1imko")
+stream_2/stream = ExtResource("5_l77yw")
+stream_3/stream = ExtResource("6_oinpo")
+stream_4/stream = ExtResource("7_wvkic")
 
 [node name="Curve Ball Left" type="Node2D" unique_id=536422818]
 script = ExtResource("1_3843v")
@@ -28,3 +41,7 @@ scale = Vector2(0.20166665, 0.04852096)
 texture = ExtResource("2_jqi6q")
 centered = false
 offset = Vector2(-150, -150)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=2022647290]
+stream = SubResource("AudioStreamRandomizer_x1a4p")
+autoplay = true
